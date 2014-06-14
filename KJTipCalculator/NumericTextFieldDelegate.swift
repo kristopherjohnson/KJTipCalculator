@@ -24,6 +24,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import Foundation
 import UIKit
 
+// Implementation of UITextFieldDelegate that prevents non-numeric characters
+// from being entered in a numeric text field.
 class NumericTextFieldDelegate: NSObject, UITextFieldDelegate {
     var maxLength: Int
     var allowDecimal: Bool
@@ -42,8 +44,7 @@ class NumericTextFieldDelegate: NSObject, UITextFieldDelegate {
         replacementString string: String!) -> Bool
     {
         let originalText: NSString = textField.text
-        let proposedText: NSString = originalText.stringByReplacingCharactersInRange(range,
-            withString: string)
+        let proposedText: NSString = originalText.stringByReplacingCharactersInRange(range, withString: string)
         
         let proposedLength = proposedText.length
         if proposedLength > maxLength {

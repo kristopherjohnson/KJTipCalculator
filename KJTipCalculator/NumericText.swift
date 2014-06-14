@@ -23,32 +23,55 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import UIKit
 
-// Read Int value from String, returning nil if it is not a valid integer string
-func integerValueForText(s: String) -> Int? {
-    let length = countElements(s)
-    let scanner = NSScanner(string: s)
-    scanner.charactersToBeSkipped = nil
-    var value: Int = 0
-    if scanner.scanInteger(&value) && (scanner.scanLocation == length) {
-        return value
+// Wrapper for NSScanner that doesn't allow leading whitespace.
+// Returns Optional values rather than using pointer/inout parameters.
+class StrictScanner {
+    var scanner: NSScanner
+    
+    init(string: String) {
+        scanner = NSScanner(string: string)
+        scanner.charactersToBeSkipped = nil
     }
-    else {
+    
+    var atEnd: Bool { return scanner.atEnd }
+    
+    func scanInteger() -> Int? {
+        var value: Int = 0
+        if scanner.scanInteger(&value) {
+            return value
+        }
+        return nil
+    }
+    
+    func scanDouble() -> Double? {
+        var value: Double = 0
+        if scanner.scanDouble(&value) {
+            return value
+        }
         return nil
     }
 }
 
+// Read Int value from String, returning nil if it is not a valid integer string
+func integerValueForText(s: String) -> Int? {
+    let scanner = StrictScanner(string: s)
+    if let result = scanner.scanInteger() {
+        if scanner.atEnd {
+            return result
+        }
+    }
+    return nil
+}
+
 // Read Double value from String, returning nil if it is not a valid floating-point string
 func doubleValueForText(s: String) -> Double? {
-    let length = countElements(s)
-    let scanner = NSScanner(string: s)
-    scanner.charactersToBeSkipped = nil
-    var value: Double = 0.0
-    if scanner.scanDouble(&value) && (scanner.scanLocation == length) {
-        return value
+    let scanner = StrictScanner(string: s)
+    if let result = scanner.scanDouble() {
+        if scanner.atEnd {
+            return result
+        }
     }
-    else {
-        return nil
-    }
+    return nil
 }
 
 // Determine whether given string is a valid integer string
