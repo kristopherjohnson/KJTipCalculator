@@ -1,25 +1,142 @@
-//
-//  ViewController.swift
-//  KJTipCalculator
-//
-//  Created by Kristopher Johnson on 6/13/14.
-//  Copyright (c) 2014 Kristopher Johnson. All rights reserved.
-//
+/*
+Copyright (c) 2014 Kristopher Johnson
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
 
 import UIKit
 
-class ViewController: UIViewController {
-                            
+class ViewController: UIViewController, UITextFieldDelegate {
+    
+    let currencyFormat: NSString = "%.2f"
+    
+    let minTipPercentage     = 1
+    let defaultTipPercentage = 15
+    let maxTipPercentage     = 30
+    
+    let minNumberInParty     = 1
+    let defaultNumberInParty = 1
+    let maxNumberInParty     = 99
+    
+    @IBOutlet var subtotalTextField      : UITextField
+    @IBOutlet var tipPercentageTextField : UITextField
+    @IBOutlet var tipPercentageStepper   : UIStepper
+    @IBOutlet var numberInPartyTextField : UITextField
+    @IBOutlet var numberInPartyStepper   : UIStepper
+    @IBOutlet var tipOutput              : UILabel
+    @IBOutlet var totalOutput            : UILabel
+    @IBOutlet var splitOutput            : UILabel
+    
+    var integerTextFieldDelegate = NumericTextFieldDelegate(maxLength:2)
+    var subtotalTextFieldDelegate = NumericTextFieldDelegate(maxLength: 7, allowDecimal: true)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        subtotalTextField.delegate = subtotalTextFieldDelegate
+        tipPercentageTextField.delegate = integerTextFieldDelegate
+        numberInPartyTextField.delegate = integerTextFieldDelegate
+        
+        tipPercentageStepper.minimumValue = Double(minTipPercentage)
+        tipPercentageStepper.maximumValue = Double(maxTipPercentage)
+        tipPercentageStepper.value = Double(defaultTipPercentage)
+        
+        numberInPartyStepper.minimumValue = Double(minNumberInParty)
+        numberInPartyStepper.maximumValue = Double(maxNumberInParty)
+        numberInPartyStepper.value = Double(defaultNumberInParty)
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        recalculate()
+    }
+    
+    override func viewDidAppear(animated: Bool)  {
+        super.viewDidAppear(animated);
+        view.tintColor = UIColor(red: 1.0, green: 0.0, blue: 0.8, alpha: 1.0)
+        subtotalTextField.becomeFirstResponder()
+    }
+    
+    @IBAction func clearButtonWasTapped(sender: UIButton) {
+        subtotalTextField.text = ""
+        subtotalTextField.becomeFirstResponder()
+        recalculate()
+    }
+    
+    @IBAction func subtotalTextFieldChanged(sender: UITextField) {
+        recalculate()
+    }
+    
+    @IBAction func tipPercentageTextFieldChanged(sender: UITextField) {
+        if let value = sender.textIntegerValue() {
+            if minTipPercentage <= value && value <= maxTipPercentage {
+                tipPercentageStepper.value = Double(value)
+            }
+        }
+        recalculate()
+    }
+    
+    @IBAction func tipPercentageStepperValueChanged(sender: UIStepper) {
+        tipPercentageTextField.setTextNumericValue(sender.value)
+        recalculate()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    @IBAction func numberInPartyTextFieldChanged(sender: UITextField) {
+        if let value = sender.textIntegerValue() {
+            if minNumberInParty <= value && value <= maxNumberInParty {
+                numberInPartyStepper.value = Double(value)
+            }
+        }
+        recalculate()
+    }
+    
+    @IBAction func numberInPartyStepperValueChanged(sender: UIStepper) {
+        numberInPartyTextField.setTextNumericValue(sender.value)
+        recalculate()
     }
 
-
+    func recalculate() {
+        tipOutput.text = ""
+        totalOutput.text = ""
+        splitOutput.text = ""
+        
+        if let subtotal = subtotalTextField.textDoubleValue() {
+            if let tipPercentage = tipPercentageTextField.textIntegerValue() {
+                if let numberInParty = numberInPartyTextField.textIntegerValue() {
+                    
+                    if subtotal > 0 && tipPercentage > 0 && numberInParty > 0 {
+                        let tip = subtotal * (0.01 * Double(tipPercentage))
+                        let total = subtotal + tip
+                        let perPerson = total / Double(numberInParty)
+                        
+                        setCurrencyValue(tip, output: tipOutput)
+                        setCurrencyValue(total, output: totalOutput)
+                        setCurrencyValue(perPerson, output: splitOutput)
+                    }
+                }
+            }
+        }
+    }
+    
+    func setCurrencyValue(value: Double, output: HasReadWriteTextProperty) {
+        setNumericValueForText(output, value, currencyFormat)
+    }
 }
 
