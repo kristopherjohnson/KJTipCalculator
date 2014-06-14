@@ -23,13 +23,30 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 import UIKit
 
+extension UIStepper {
+    // Set value if proposed new value is within minimumValue...maximumValue
+    func ifInRangeSetValue(proposedValue: Double) -> Bool {
+        if minimumValue <= proposedValue && proposedValue <= maximumValue {
+            value = proposedValue
+            return true
+        }
+        else {
+            return false
+        }
+    }
+    
+    func ifInRangeSetValue(proposedValue: Int) -> Bool {
+        return ifInRangeSetValue(Double(proposedValue))
+    }
+}
+
 class ViewController: UIViewController, UITextFieldDelegate {
     
     let currencyFormat: NSString = "%.2f"
     
     let minTipPercentage     = 1
     let defaultTipPercentage = 15
-    let maxTipPercentage     = 30
+    let maxTipPercentage     = 99
     
     let minNumberInParty     = 1
     let defaultNumberInParty = 1
@@ -65,12 +82,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        recalculate()
-    }
-    
-    override func viewDidAppear(animated: Bool)  {
-        super.viewDidAppear(animated);
         view.tintColor = UIColor(red: 1.0, green: 0.0, blue: 0.8, alpha: 1.0)
+        recalculate()
         subtotalTextField.becomeFirstResponder()
     }
     
@@ -86,9 +99,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func tipPercentageTextFieldChanged(sender: UITextField) {
         if let value = sender.textIntegerValue() {
-            if minTipPercentage <= value && value <= maxTipPercentage {
-                tipPercentageStepper.value = Double(value)
-            }
+            tipPercentageStepper.ifInRangeSetValue(value)
         }
         recalculate()
     }
@@ -100,9 +111,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBAction func numberInPartyTextFieldChanged(sender: UITextField) {
         if let value = sender.textIntegerValue() {
-            if minNumberInParty <= value && value <= maxNumberInParty {
-                numberInPartyStepper.value = Double(value)
-            }
+            numberInPartyStepper.ifInRangeSetValue(value)
         }
         recalculate()
     }
@@ -121,7 +130,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             if let tipPercentage = tipPercentageTextField.textIntegerValue() {
                 if let numberInParty = numberInPartyTextField.textIntegerValue() {
                     
-                    if subtotal > 0 && tipPercentage > 0 && numberInParty > 0 {
+                    if (subtotal > 0) && (tipPercentage > 0) && (numberInParty > 0) {
                         let tip = subtotal * (0.01 * Double(tipPercentage))
                         let total = subtotal + tip
                         let perPerson = total / Double(numberInParty)
