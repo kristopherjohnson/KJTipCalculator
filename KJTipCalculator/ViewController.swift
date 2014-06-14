@@ -144,7 +144,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func setCurrencyValue(value: Double, output: HasReadWriteTextProperty) {
+    func setCurrencyValue(value: Double, output: TextSettable) {
         setNumericValueForText(output, value, currencyFormat)
     }
 }

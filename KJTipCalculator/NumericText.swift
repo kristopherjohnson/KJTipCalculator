@@ -72,32 +72,32 @@ func isValidDoubleText(s: String) -> Bool {
 }
 
 // Protocol for object with a read-write "text" property
-protocol HasReadWriteTextProperty {
+protocol TextSettable {
     var text: String! { get set }
 }
 
 // Return Int value of text property, or nil if empty
-func integerValueForText(hasText: HasReadWriteTextProperty) -> Int? {
-    return integerValueForText(hasText.text)
+func integerValueForText(ts: TextSettable) -> Int? {
+    return integerValueForText(ts.text)
 }
 
 // Return Double value of text property, or nil if empty
-func doubleValueForText(hasText: HasReadWriteTextProperty) -> Double? {
-    return doubleValueForText(hasText.text)
+func doubleValueForText(ts: TextSettable) -> Double? {
+    return doubleValueForText(ts.text)
 }
 
 // Set text property to string representation of given number
-func setNumericValueForText(var hasText: HasReadWriteTextProperty, value: NSNumber) {
-    hasText.text = value.stringValue
+func setNumericValueForText(var ts: TextSettable, value: NSNumber) {
+    ts.text = value.stringValue
 }
 
 // Set text property to string representation of given number using a Double format string ("%f", "%e", "%g", etc.)
-func setNumericValueForText(var hasText: HasReadWriteTextProperty, value: NSNumber, doubleFormat: NSString) {
-    hasText.text = NSString(format: doubleFormat, value.doubleValue)
+func setNumericValueForText(var ts: TextSettable, value: NSNumber, doubleFormat: NSString) {
+    ts.text = NSString(format: doubleFormat, value.doubleValue)
 }
 
 // Add these methods to UILabel
-extension UILabel: HasReadWriteTextProperty {
+extension UILabel: TextSettable {
     func textIntegerValue() -> Int? {
         return integerValueForText(self)
     }
@@ -113,7 +113,7 @@ extension UILabel: HasReadWriteTextProperty {
 }
 
 // Add these methods to UITextField
-extension UITextField: HasReadWriteTextProperty {
+extension UITextField: TextSettable {
     func textIntegerValue() -> Int? {
         return integerValueForText(self)
     }
