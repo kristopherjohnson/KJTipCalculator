@@ -122,25 +122,26 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
 
     func recalculate() {
-        tipOutput.text = ""
-        totalOutput.text = ""
-        splitOutput.text = ""
+        // If all text fields have valid values, then we can calculate results.
+        // Otherwise, set result fields empty.
         
-        if let subtotal = subtotalTextField.textDoubleValue() {
-            if let tipPercentage = tipPercentageTextField.textIntegerValue() {
-                if let numberInParty = numberInPartyTextField.textIntegerValue() {
-                    
-                    if (subtotal > 0) && (tipPercentage > 0) && (numberInParty > 0) {
-                        let tip = subtotal * (0.01 * Double(tipPercentage))
-                        let total = subtotal + tip
-                        let perPerson = total / Double(numberInParty)
-                        
-                        setCurrencyValue(tip, output: tipOutput)
-                        setCurrencyValue(total, output: totalOutput)
-                        setCurrencyValue(perPerson, output: splitOutput)
-                    }
-                }
-            }
+        switch (subtotalTextField.textDoubleValue(), tipPercentageTextField.textIntegerValue(), numberInPartyTextField.textIntegerValue()) {
+            
+        case let (.Some(subtotal), .Some(tipPercentage), .Some(numberInParty))
+            where (subtotal > 0) && (tipPercentage > 0) && (numberInParty > 0):
+            
+            let tip = subtotal * (0.01 * Double(tipPercentage))
+            let total = subtotal + tip
+            let perPerson = total / Double(numberInParty)
+            
+            setCurrencyValue(tip, output: tipOutput)
+            setCurrencyValue(total, output: totalOutput)
+            setCurrencyValue(perPerson, output: splitOutput)
+            
+        default:
+            tipOutput.text = ""
+            totalOutput.text = ""
+            splitOutput.text = ""
         }
     }
     
