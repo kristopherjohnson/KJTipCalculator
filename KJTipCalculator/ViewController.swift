@@ -126,18 +126,21 @@ class ViewController: UIViewController, UITextFieldDelegate {
         // If all text fields have valid values, then we can calculate results.
         // Otherwise, set result fields empty.
         
-        switch (subtotalTextField.textDoubleValue(), tipPercentageTextField.textIntegerValue(), numberInPartyTextField.textIntegerValue()) {
+        switch (subtotalTextField.textDoubleValue(),
+            tipPercentageTextField.textIntegerValue(),
+            numberInPartyTextField.textIntegerValue()) {
             
         case let (.Some(subtotal), .Some(tipPercentage), .Some(numberInParty))
             where (subtotal > 0) && (tipPercentage > 0) && (numberInParty > 0):
             
-            let tip = subtotal * (0.01 * Double(tipPercentage))
-            let total = subtotal + tip
-            let perPerson = total / Double(numberInParty)
+            let calc = TipCalculation(
+                subtotal: subtotal,
+                tipPercentage: tipPercentage,
+                numberInParty: numberInParty)
             
-            setCurrencyValue(tip, output: tipOutput)
-            setCurrencyValue(total, output: totalOutput)
-            setCurrencyValue(perPerson, output: splitOutput)
+            setCurrencyValue(calc.tip,       destination: tipOutput)
+            setCurrencyValue(calc.total,     destination: totalOutput)
+            setCurrencyValue(calc.perPerson, destination: splitOutput)
             
         default:
             tipOutput.text = ""
@@ -146,8 +149,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
-    func setCurrencyValue(value: Double, output: TextSettable) {
-        setNumericValueForText(output, value, currencyFormat)
+    func setCurrencyValue(value: Double, destination: TextSettable) {
+        setNumericValueForText(destination, value, currencyFormat)
     }
 }
 

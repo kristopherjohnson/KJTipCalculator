@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		4EFD57DF1955C82E00CC9DCF /* KJNumericText.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFD57DE1955C82E00CC9DCF /* KJNumericText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EFD57E51955C82E00CC9DCF /* KJNumericText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFD57D91955C82E00CC9DCF /* KJNumericText.framework */; };
-		4EFD57EC1955C82E00CC9DCF /* KJNumericTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD57EB1955C82E00CC9DCF /* KJNumericTextTests.swift */; };
 		4EFD58011955C8C400CC9DCF /* NumericText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD57FF1955C8C400CC9DCF /* NumericText.swift */; };
 		4EFD58021955C8C400CC9DCF /* NumericText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD57FF1955C8C400CC9DCF /* NumericText.swift */; };
 		4EFD58031955C8C400CC9DCF /* NumericTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD58001955C8C400CC9DCF /* NumericTextFieldDelegate.swift */; };
@@ -34,7 +33,6 @@
 		4EFD57DE1955C82E00CC9DCF /* KJNumericText.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KJNumericText.h; sourceTree = "<group>"; };
 		4EFD57E41955C82E00CC9DCF /* KJNumericTextTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KJNumericTextTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EFD57EA1955C82E00CC9DCF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4EFD57EB1955C82E00CC9DCF /* KJNumericTextTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KJNumericTextTests.swift; sourceTree = "<group>"; };
 		4EFD57FF1955C8C400CC9DCF /* NumericText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericText.swift; sourceTree = "<group>"; };
 		4EFD58001955C8C400CC9DCF /* NumericTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextFieldDelegate.swift; sourceTree = "<group>"; };
 		4EFD58051955C8FA00CC9DCF /* NumericTextFieldDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextFieldDelegateTests.swift; sourceTree = "<group>"; };
@@ -102,7 +100,6 @@
 			children = (
 				4EFD58051955C8FA00CC9DCF /* NumericTextFieldDelegateTests.swift */,
 				4EFD58061955C8FA00CC9DCF /* NumericTextTests.swift */,
-				4EFD57EB1955C82E00CC9DCF /* KJNumericTextTests.swift */,
 				4EFD57E91955C82E00CC9DCF /* Supporting Files */,
 			);
 			path = KJNumericTextTests;
@@ -237,7 +234,6 @@
 				4EFD58021955C8C400CC9DCF /* NumericText.swift in Sources */,
 				4EFD58041955C8C400CC9DCF /* NumericTextFieldDelegate.swift in Sources */,
 				4EFD58081955C8FA00CC9DCF /* NumericTextTests.swift in Sources */,
-				4EFD57EC1955C82E00CC9DCF /* KJNumericTextTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

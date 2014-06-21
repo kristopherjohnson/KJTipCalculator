@@ -13,6 +13,9 @@
 		4ED605B0194BD30200DA29D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED605AE194BD30200DA29D2 /* Main.storyboard */; };
 		4ED605B2194BD30200DA29D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED605B1194BD30200DA29D2 /* Images.xcassets */; };
 		4EFD57FE1955C85E00CC9DCF /* KJNumericText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFD57FB1955C82F00CC9DCF /* KJNumericText.framework */; };
+		4EFD580A1955CB9400CC9DCF /* TipCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD58091955CB9400CC9DCF /* TipCalculation.swift */; };
+		4EFD580B1955CB9400CC9DCF /* TipCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD58091955CB9400CC9DCF /* TipCalculation.swift */; };
+		4EFD580D1955CC9D00CC9DCF /* TipCalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD580C1955CC9D00CC9DCF /* TipCalculationTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,8 @@
 		4ED605B7194BD30200DA29D2 /* KJTipCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KJTipCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED605BC194BD30200DA29D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EFD57F51955C82E00CC9DCF /* KJNumericText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KJNumericText.xcodeproj; path = KJNumericText/KJNumericText.xcodeproj; sourceTree = "<group>"; };
+		4EFD58091955CB9400CC9DCF /* TipCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculation.swift; sourceTree = "<group>"; };
+		4EFD580C1955CC9D00CC9DCF /* TipCalculationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculationTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,11 +100,12 @@
 			isa = PBXGroup;
 			children = (
 				4ED605AA194BD30200DA29D2 /* AppDelegate.swift */,
-				4E9FE860194CADC70015E1DA /* README.md */,
-				4E9FE861194CAE3D0015E1DA /* LICENSE */,
 				4ED605B1194BD30200DA29D2 /* Images.xcassets */,
+				4E9FE861194CAE3D0015E1DA /* LICENSE */,
 				4ED605AE194BD30200DA29D2 /* Main.storyboard */,
+				4E9FE860194CADC70015E1DA /* README.md */,
 				4ED605A8194BD30200DA29D2 /* Supporting Files */,
+				4EFD58091955CB9400CC9DCF /* TipCalculation.swift */,
 				4ED605AC194BD30200DA29D2 /* ViewController.swift */,
 			);
 			path = KJTipCalculator;
@@ -117,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				4ED605BB194BD30200DA29D2 /* Supporting Files */,
+				4EFD580C1955CC9D00CC9DCF /* TipCalculationTests.swift */,
 			);
 			path = KJTipCalculatorTests;
 			sourceTree = "<group>";
@@ -262,6 +269,7 @@
 			files = (
 				4ED605AD194BD30200DA29D2 /* ViewController.swift in Sources */,
 				4ED605AB194BD30200DA29D2 /* AppDelegate.swift in Sources */,
+				4EFD580A1955CB9400CC9DCF /* TipCalculation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,6 +278,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4ECF9EC8194C957700173446 /* ViewController.swift in Sources */,
+				4EFD580D1955CC9D00CC9DCF /* TipCalculationTests.swift in Sources */,
+				4EFD580B1955CB9400CC9DCF /* TipCalculation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
