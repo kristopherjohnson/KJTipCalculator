@@ -22,6 +22,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 */
 
 import UIKit
+import KJNumericText
 
 extension UIStepper {
     // Set value if proposed new value is within minimumValue...maximumValue
