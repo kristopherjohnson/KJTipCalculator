@@ -56,6 +56,7 @@
 		4EFD57F51955C82E00CC9DCF /* KJNumericText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KJNumericText.xcodeproj; path = KJNumericText/KJNumericText.xcodeproj; sourceTree = "<group>"; };
 		4EFD58091955CB9400CC9DCF /* TipCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculation.swift; sourceTree = "<group>"; };
 		4EFD580C1955CC9D00CC9DCF /* TipCalculationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculationTests.swift; sourceTree = "<group>"; };
+		4EFD580E1955D6B500CC9DCF /* KJTipCalculatorScreenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KJTipCalculatorScreenshot.png; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,10 +101,9 @@
 			isa = PBXGroup;
 			children = (
 				4ED605AA194BD30200DA29D2 /* AppDelegate.swift */,
+				4EFD580F1955D6D000CC9DCF /* Documentation */,
 				4ED605B1194BD30200DA29D2 /* Images.xcassets */,
-				4E9FE861194CAE3D0015E1DA /* LICENSE */,
 				4ED605AE194BD30200DA29D2 /* Main.storyboard */,
-				4E9FE860194CADC70015E1DA /* README.md */,
 				4ED605A8194BD30200DA29D2 /* Supporting Files */,
 				4EFD58091955CB9400CC9DCF /* TipCalculation.swift */,
 				4ED605AC194BD30200DA29D2 /* ViewController.swift */,
@@ -143,6 +143,16 @@
 				4EFD57FD1955C82F00CC9DCF /* KJNumericTextTests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		4EFD580F1955D6D000CC9DCF /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				4EFD580E1955D6B500CC9DCF /* KJTipCalculatorScreenshot.png */,
+				4E9FE861194CAE3D0015E1DA /* LICENSE */,
+				4E9FE860194CADC70015E1DA /* README.md */,
+			);
+			name = Documentation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
