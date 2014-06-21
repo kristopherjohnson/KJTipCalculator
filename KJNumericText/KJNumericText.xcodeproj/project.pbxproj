@@ -79,9 +79,9 @@
 		4EFD57DB1955C82E00CC9DCF /* KJNumericText */ = {
 			isa = PBXGroup;
 			children = (
+				4EFD57DE1955C82E00CC9DCF /* KJNumericText.h */,
 				4EFD57FF1955C8C400CC9DCF /* NumericText.swift */,
 				4EFD58001955C8C400CC9DCF /* NumericTextFieldDelegate.swift */,
-				4EFD57DE1955C82E00CC9DCF /* KJNumericText.h */,
 				4EFD57DC1955C82E00CC9DCF /* Supporting Files */,
 			);
 			path = KJNumericText;

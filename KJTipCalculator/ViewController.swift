@@ -62,7 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet var totalOutput            : UILabel
     @IBOutlet var splitOutput            : UILabel
     
-    var integerTextFieldDelegate = NumericTextFieldDelegate(maxLength:2)
+    var integerTextFieldDelegate = NumericTextFieldDelegate(maxLength: 2)
     var subtotalTextFieldDelegate = NumericTextFieldDelegate(maxLength: 7, allowDecimal: true)
     
     override func viewDidLoad() {

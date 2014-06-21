@@ -10,16 +10,6 @@ import XCTest
 
 class TipCalculationTests: XCTestCase {
 
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-    }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-
     func testTipCalculation15() {
         let calc = TipCalculation(subtotal: 100, tipPercentage: 15, numberInParty: 1)
         XCTAssertEqual(15.0, calc.tip)
@@ -39,6 +29,5 @@ class TipCalculationTests: XCTestCase {
         XCTAssertEqual(18.0, calc.tip)
         XCTAssertEqual(118.0, calc.total)
         XCTAssertEqual(59.0, calc.perPerson)
-    }
-    
+    }    
 }

@@ -84,5 +84,4 @@ class NumericTextTests: XCTestCase {
         let value = doubleValueForString("123.4a")
         XCTAssert(value == nil)
     }
-    
 }
