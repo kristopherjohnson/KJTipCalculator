@@ -25,63 +25,63 @@ import XCTest
 
 class NumericTextTests: XCTestCase {
     
-    func testIntegerValueForValidText() {
-        let value = integerValueForText("123")
+    func testIntegerValueForValidString() {
+        let value = integerValueForString("123")
         XCTAssertEqual(123, value!)
     }
 
-    func testNegativeIntegerValueForValidText() {
-        let value = integerValueForText("-321")
+    func testNegativeIntegerValueForValidString() {
+        let value = integerValueForString("-321")
         XCTAssertEqual(-321, value!)
     }
     
-    func testDoubleValueForValidText() {
-        let value = doubleValueForText("123.4")
+    func testDoubleValueForValidString() {
+        let value = doubleValueForString("123.4")
         XCTAssertEqual(123.4, value!)
     }
     
-    func testNegativeDoubleValueForValidText() {
-        let value = doubleValueForText("-4.321")
+    func testNegativeDoubleValueForValidString() {
+        let value = doubleValueForString("-4.321")
         XCTAssertEqual(-4.321, value!)
     }
     
     func testRejectIntegerValueWithLeadingSpace() {
-        let value = integerValueForText(" 123")
+        let value = integerValueForString(" 123")
         XCTAssert(value == nil)
     }
     
     func testRejectDoubleValueWithLeadingSpace() {
-        let value = doubleValueForText(" 123.4")
+        let value = doubleValueForString(" 123.4")
         XCTAssert(value == nil)
     }
     
     func testRejectIntegerValueWithTrailingSpace() {
-        let value = integerValueForText("123 ")
+        let value = integerValueForString("123 ")
         XCTAssert(value == nil)
     }
     
     func testRejectDoubleValueWithTrailingSpace() {
-        let value = doubleValueForText("123.4 ")
+        let value = doubleValueForString("123.4 ")
         XCTAssert(value == nil)
     }
     
     func testRejectIntegerValueWithLeadingNonnumericCharacter() {
-        let value = integerValueForText("z123")
+        let value = integerValueForString("z123")
         XCTAssert(value == nil)
     }
     
     func testRejectDoubleValueWithLeadingNonnumericCharacter() {
-        let value = doubleValueForText("z123.4")
+        let value = doubleValueForString("z123.4")
         XCTAssert(value == nil)
     }
     
     func testRejectIntegerValueWithTrailingNonnumericCharacter() {
-        let value = integerValueForText("123a")
+        let value = integerValueForString("123a")
         XCTAssert(value == nil)
     }
     
     func testRejectDoubleValueWithTrailingNonnumericCharacter() {
-        let value = doubleValueForText("123.4a")
+        let value = doubleValueForString("123.4a")
         XCTAssert(value == nil)
     }
     

@@ -53,7 +53,7 @@ class StrictScanner {
 }
 
 // Read Int value from String, returning nil if it is not a valid integer string
-func integerValueForText(s: String) -> Int? {
+func integerValueForString(s: String) -> Int? {
     let scanner = StrictScanner(string: s)
     if let result = scanner.scanInteger() {
         if scanner.atEnd {
@@ -64,7 +64,7 @@ func integerValueForText(s: String) -> Int? {
 }
 
 // Read Double value from String, returning nil if it is not a valid floating-point string
-func doubleValueForText(s: String) -> Double? {
+func doubleValueForString(s: String) -> Double? {
     let scanner = StrictScanner(string: s)
     if let result = scanner.scanDouble() {
         if scanner.atEnd {
@@ -75,8 +75,8 @@ func doubleValueForText(s: String) -> Double? {
 }
 
 // Determine whether given string is a valid integer string
-func isValidIntegerText(s: String) -> Bool {
-    if let value = integerValueForText(s) {
+func isValidIntegerString(s: String) -> Bool {
+    if let value = integerValueForString(s) {
         return true
     }
     else {
@@ -85,8 +85,8 @@ func isValidIntegerText(s: String) -> Bool {
 }
 
 // Determine whether given string is a valid floating-point string
-func isValidDoubleText(s: String) -> Bool {
-    if let value = doubleValueForText(s) {
+func isValidDoubleString(s: String) -> Bool {
+    if let value = doubleValueForString(s) {
         return true
     }
     else {
@@ -101,12 +101,12 @@ protocol TextSettable {
 
 // Return Int value of text property, or nil if empty
 func integerValueForText(ts: TextSettable) -> Int? {
-    return integerValueForText(ts.text)
+    return integerValueForString(ts.text)
 }
 
 // Return Double value of text property, or nil if empty
 func doubleValueForText(ts: TextSettable) -> Double? {
-    return doubleValueForText(ts.text)
+    return doubleValueForString(ts.text)
 }
 
 // Set text property to string representation of given number

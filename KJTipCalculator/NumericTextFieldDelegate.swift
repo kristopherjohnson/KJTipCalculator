@@ -52,12 +52,12 @@ class NumericTextFieldDelegate: NSObject, UITextFieldDelegate {
         }
         
         if allowDecimal {
-            if proposedLength > 0 && !isValidDoubleText(proposedText) {
+            if proposedLength > 0 && !isValidDoubleString(proposedText) {
                 return false
             }
         }
         else {
-            if proposedLength > 0 && !isValidIntegerText(proposedText) {
+            if proposedLength > 0 && !isValidIntegerString(proposedText) {
                 return false
             }
         }
