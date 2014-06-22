@@ -41,7 +41,7 @@ extension UIStepper {
     }
 }
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController {
     
     let currencyFormat: NSString = "%.2f"
     
