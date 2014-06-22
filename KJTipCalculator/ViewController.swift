@@ -104,7 +104,6 @@ class ViewController: UIViewController {
     
     @IBAction func tipPercentageTextFieldChanged(sender: UITextField) {
         if let value = sender.textIntegerValue() {
-            println("new value is \(value)")
             tipPercentageStepper.ifInRangeSetValue(value)
         }
         recalculate()
@@ -117,7 +116,6 @@ class ViewController: UIViewController {
 
     @IBAction func numberInPartyTextFieldChanged(sender: UITextField) {
         if let value = sender.textIntegerValue() {
-            println("new value is \(value)")
             numberInPartyStepper.ifInRangeSetValue(value)
         }
         recalculate()
