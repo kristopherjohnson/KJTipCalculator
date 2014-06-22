@@ -26,18 +26,15 @@ import KJNumericText
 
 extension UIStepper {
     // Set value if proposed new value is within minimumValue...maximumValue
-    func ifInRangeSetValue(proposedValue: Double) -> Bool {
-        if minimumValue <= proposedValue && proposedValue <= maximumValue {
-            value = proposedValue
+    func ifInRangeSetValue(proposedValue: NSNumber) -> Bool {
+        let proposed = proposedValue.doubleValue
+        if minimumValue <= proposed && proposed <= maximumValue {
+            value = proposed
             return true
         }
         else {
             return false
         }
-    }
-    
-    func ifInRangeSetValue(proposedValue: Int) -> Bool {
-        return ifInRangeSetValue(Double(proposedValue))
     }
 }
 
@@ -46,7 +43,7 @@ class ViewController: UIViewController {
     let currencyFormat: NSString = "%.2f"
     
     let minTipPercentage     = 1
-    let defaultTipPercentage = 15
+    let defaultTipPercentage = 20
     let maxTipPercentage     = 99
     
     let minNumberInParty     = 1
@@ -68,13 +65,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        subtotalTextField.text = ""
         subtotalTextField.delegate = subtotalTextFieldDelegate
+        
+        tipPercentageTextField.setTextNumericValue(defaultTipPercentage)
         tipPercentageTextField.delegate = integerTextFieldDelegate
-        numberInPartyTextField.delegate = integerTextFieldDelegate
         
         tipPercentageStepper.minimumValue = Double(minTipPercentage)
         tipPercentageStepper.maximumValue = Double(maxTipPercentage)
         tipPercentageStepper.value = Double(defaultTipPercentage)
+        
+        numberInPartyTextField.setTextNumericValue(defaultNumberInParty)
+        numberInPartyTextField.delegate = integerTextFieldDelegate
         
         numberInPartyStepper.minimumValue = Double(minNumberInParty)
         numberInPartyStepper.maximumValue = Double(maxNumberInParty)
@@ -100,6 +102,7 @@ class ViewController: UIViewController {
     
     @IBAction func tipPercentageTextFieldChanged(sender: UITextField) {
         if let value = sender.textIntegerValue() {
+            println("new value is \(value)")
             tipPercentageStepper.ifInRangeSetValue(value)
         }
         recalculate()
@@ -112,6 +115,7 @@ class ViewController: UIViewController {
 
     @IBAction func numberInPartyTextFieldChanged(sender: UITextField) {
         if let value = sender.textIntegerValue() {
+            println("new value is \(value)")
             numberInPartyStepper.ifInRangeSetValue(value)
         }
         recalculate()
