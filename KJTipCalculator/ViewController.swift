@@ -88,45 +88,45 @@ class ViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         view.tintColor = appTintColor
-        recalculate()
+        updateOutput()
         subtotalTextField.becomeFirstResponder()
     }
     
     @IBAction func clearButtonWasTapped(sender: UIButton) {
         subtotalTextField.text = ""
         subtotalTextField.becomeFirstResponder()
-        recalculate()
+        updateOutput()
     }
     
     @IBAction func subtotalTextFieldChanged(sender: UITextField) {
-        recalculate()
+        updateOutput()
     }
     
     @IBAction func tipPercentageTextFieldChanged(sender: UITextField) {
         if let value = sender.textIntegerValue() {
             tipPercentageStepper.ifInRangeSetValue(value)
         }
-        recalculate()
+        updateOutput()
     }
     
     @IBAction func tipPercentageStepperValueChanged(sender: UIStepper) {
         tipPercentageTextField.setTextNumericValue(sender.value)
-        recalculate()
+        updateOutput()
     }
 
     @IBAction func numberInPartyTextFieldChanged(sender: UITextField) {
         if let value = sender.textIntegerValue() {
             numberInPartyStepper.ifInRangeSetValue(value)
         }
-        recalculate()
+        updateOutput()
     }
     
     @IBAction func numberInPartyStepperValueChanged(sender: UIStepper) {
         numberInPartyTextField.setTextNumericValue(sender.value)
-        recalculate()
+        updateOutput()
     }
 
-    func recalculate() {
+    func updateOutput() {
         // If all text fields have valid values, then we can calculate results.
         // Otherwise, set result fields empty.
         
