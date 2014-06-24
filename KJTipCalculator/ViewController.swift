@@ -142,9 +142,9 @@ class ViewController: UIViewController {
                 tipPercentage: tipPercentage,
                 numberInParty: numberInParty)
             
-            setCurrencyValue(calc.tip,       destination: tipOutput)
-            setCurrencyValue(calc.total,     destination: totalOutput)
-            setCurrencyValue(calc.perPerson, destination: splitOutput)
+            setText(tipOutput,   currencyValue: calc.tip)
+            setText(totalOutput, currencyValue: calc.total)
+            setText(splitOutput, currencyValue: calc.perPerson)
             
         default:
             tipOutput.text = ""
@@ -153,8 +153,8 @@ class ViewController: UIViewController {
         }
     }
     
-    func setCurrencyValue(value: Double, destination: TextSettable) {
-        setNumericValueForText(destination, value, currencyFormat)
+    func setText(textSettable: TextSettable, currencyValue: Double) {
+        setNumericValueForText(textSettable, currencyValue, currencyFormat);
     }
 }
 
