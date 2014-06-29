@@ -26,7 +26,7 @@ import KJNumericText
 
 extension UIStepper {
     // Set value if proposed new value is within minimumValue...maximumValue
-    func ifInRangeSetValue(proposedValue: NSNumber) -> Bool {
+    func kjtc_ifInRangeSetValue(proposedValue: NSNumber) -> Bool {
         let proposed = proposedValue.doubleValue
         if minimumValue <= proposed && proposed <= maximumValue {
             value = proposed
@@ -104,7 +104,7 @@ class ViewController: UIViewController {
     
     @IBAction func tipPercentageTextFieldChanged(sender: UITextField) {
         if let value = sender.textIntegerValue() {
-            tipPercentageStepper.ifInRangeSetValue(value)
+            tipPercentageStepper.kjtc_ifInRangeSetValue(value)
         }
         updateOutput()
     }
@@ -116,7 +116,7 @@ class ViewController: UIViewController {
 
     @IBAction func numberInPartyTextFieldChanged(sender: UITextField) {
         if let value = sender.textIntegerValue() {
-            numberInPartyStepper.ifInRangeSetValue(value)
+            numberInPartyStepper.kjtc_ifInRangeSetValue(value)
         }
         updateOutput()
     }
