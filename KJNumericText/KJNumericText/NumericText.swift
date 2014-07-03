@@ -25,8 +25,8 @@ import UIKit
 
 // Wrapper for NSScanner that doesn't allow leading whitespace.
 // Returns Optional values rather than using pointer/inout parameters.
-class StrictScanner {
-    var scanner: NSScanner
+struct StrictScanner {
+    let scanner: NSScanner
     
     init(string: String) {
         scanner = NSScanner(string: string)
@@ -95,6 +95,7 @@ func isValidDoubleString(s: String) -> Bool {
 }
 
 // Protocol for object with a read-write "text" property
+@objc(kjtc_TextSettable)
 protocol TextSettable {
     var text: String! { get set }
 }
@@ -121,15 +122,22 @@ func setNumericValueForText(var ts: TextSettable, value: NSNumber, doubleFormat:
 
 // Add these methods to UILabel
 extension UILabel: TextSettable {
+    // Note: Not callable from Objective-C
     func textIntegerValue() -> Int? {
         return integerValueForText(self)
     }
+    
+    // Note: Not callable from Objective-C
     func textDoubleValue() -> Double? {
         return doubleValueForText(self)
     }
+    
+    @objc(kjtc_setTextNumericValue:)
     func setTextNumericValue(value: NSNumber) {
         setNumericValueForText(self, value)
     }
+    
+    @objc(kjtc_setTextNumericValue:doubleFormat:)
     func setTextNumericValue(value: NSNumber, doubleFormat: NSString) {
         setNumericValueForText(self, value, doubleFormat)
     }
@@ -137,15 +145,22 @@ extension UILabel: TextSettable {
 
 // Add these methods to UITextField
 extension UITextField: TextSettable {
+    // Note: Not callable from Objective-C
     func textIntegerValue() -> Int? {
         return integerValueForText(self)
     }
+    
+    // Note: Not callable from Objective-C
     func textDoubleValue() -> Double? {
         return doubleValueForText(self)
     }
+    
+    @objc(kjtc_setTextNumericValue:)
     func setTextNumericValue(value: NSNumber) {
         setNumericValueForText(self, value)
     }
+    
+    @objc(kjtc_setTextNumericValue:doubleFormat:)
     func setTextNumericValue(value: NSNumber, doubleFormat: NSString) {
         setNumericValueForText(self, value, doubleFormat)
     }
