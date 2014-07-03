@@ -10,9 +10,7 @@
 		4EFD57DF1955C82E00CC9DCF /* KJNumericText.h in Headers */ = {isa = PBXBuildFile; fileRef = 4EFD57DE1955C82E00CC9DCF /* KJNumericText.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4EFD57E51955C82E00CC9DCF /* KJNumericText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFD57D91955C82E00CC9DCF /* KJNumericText.framework */; };
 		4EFD58011955C8C400CC9DCF /* NumericText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD57FF1955C8C400CC9DCF /* NumericText.swift */; };
-		4EFD58021955C8C400CC9DCF /* NumericText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD57FF1955C8C400CC9DCF /* NumericText.swift */; };
 		4EFD58031955C8C400CC9DCF /* NumericTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD58001955C8C400CC9DCF /* NumericTextFieldDelegate.swift */; };
-		4EFD58041955C8C400CC9DCF /* NumericTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD58001955C8C400CC9DCF /* NumericTextFieldDelegate.swift */; };
 		4EFD58071955C8FA00CC9DCF /* NumericTextFieldDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD58051955C8FA00CC9DCF /* NumericTextFieldDelegateTests.swift */; };
 		4EFD58081955C8FA00CC9DCF /* NumericTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD58061955C8FA00CC9DCF /* NumericTextTests.swift */; };
 /* End PBXBuildFile section */
@@ -231,8 +229,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EFD58071955C8FA00CC9DCF /* NumericTextFieldDelegateTests.swift in Sources */,
-				4EFD58021955C8C400CC9DCF /* NumericText.swift in Sources */,
-				4EFD58041955C8C400CC9DCF /* NumericTextFieldDelegate.swift in Sources */,
 				4EFD58081955C8FA00CC9DCF /* NumericTextTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +410,7 @@
 				4EFD57F11955C82E00CC9DCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4EFD57F21955C82E00CC9DCF /* Build configuration list for PBXNativeTarget "KJNumericTextTests" */ = {
 			isa = XCConfigurationList;
@@ -422,6 +419,7 @@
 				4EFD57F41955C82E00CC9DCF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
