@@ -23,12 +23,13 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 // Given subtotal, tip percentage, and number in party, calculates tip, total, and per-person split
 struct TipCalculation {
-    var subtotal: Double
-    var tipPercentage: Int
-    var numberInParty: Int
-    var tip: Double
-    var total: Double
-    var perPerson: Double
+    let subtotal: Double
+    let tipPercentage: Int
+    let numberInParty: Int
+    
+    var tip: Double       { return (Double(tipPercentage) * 0.01) * subtotal }
+    var total: Double     { return subtotal + tip }
+    var perPerson: Double { return total / Double(numberInParty) }
     
     init(subtotal: Double, tipPercentage: Int, numberInParty: Int) {
         assert(numberInParty > 0)
@@ -36,9 +37,5 @@ struct TipCalculation {
         self.subtotal = subtotal
         self.tipPercentage = tipPercentage
         self.numberInParty = numberInParty
-        
-        tip = (Double(tipPercentage) * 0.01) * subtotal
-        total = subtotal + tip
-        perPerson = total / Double(numberInParty)
     }
 }
