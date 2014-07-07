@@ -1,7 +1,7 @@
 KJ Tip Calculator
 =================
 
-**Important note: This app cannot be built with Xcode 6 beta 3, which apparently can't build apps that use embedded frameworks. See <https://github.com/kristopherjohnson/KJTipCalculator/issues/1> for details.**
+> **Important note:** Xcode 6 beta 3 apparently can't build apps that use embedded frameworks, so KJTipCalculator cannot be built with it. See <https://github.com/kristopherjohnson/KJTipCalculator/issues/1> for details.
 
 This is a simple iOS tip calculator app, thrown together in a few hours as an experiment in using Swift and in creating frameworks in iOS.
 
