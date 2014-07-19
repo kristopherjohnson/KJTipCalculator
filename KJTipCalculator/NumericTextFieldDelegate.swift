@@ -30,13 +30,9 @@ class NumericTextFieldDelegate: NSObject, UITextFieldDelegate {
     var maxLength: Int
     var allowDecimal: Bool
     
-    init(maxLength: Int, allowDecimal: Bool) {
+    init(maxLength: Int, allowDecimal: Bool = false) {
         self.maxLength = maxLength
         self.allowDecimal = allowDecimal
-    }
-    
-    convenience init(maxLength: Int) {
-        self.init(maxLength: maxLength, allowDecimal: false)
     }
     
     func textField(textField: UITextField!,
