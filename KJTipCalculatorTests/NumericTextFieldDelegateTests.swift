@@ -24,7 +24,7 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 import XCTest
 import Foundation
 import UIKit
-import KJNumericText
+import KJTipCalculator
 
 class NumericTextFieldDelegateTests: XCTestCase {
 

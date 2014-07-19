@@ -7,6 +7,7 @@
 //
 
 import XCTest
+import KJTipCalculator
 
 class TipCalculationTests: XCTestCase {
 

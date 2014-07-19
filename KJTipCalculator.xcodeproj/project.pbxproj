@@ -7,14 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4ECF9EC8194C957700173446 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED605AC194BD30200DA29D2 /* ViewController.swift */; };
+		4E23C8E0197B009B00AE10F4 /* NumericText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8DE197B009B00AE10F4 /* NumericText.swift */; };
+		4E23C8E1197B009B00AE10F4 /* NumericTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8DF197B009B00AE10F4 /* NumericTextFieldDelegate.swift */; };
+		4E23C8E4197B00E700AE10F4 /* NumericTextFieldDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8E2197B00E700AE10F4 /* NumericTextFieldDelegateTests.swift */; };
+		4E23C8E5197B00E700AE10F4 /* NumericTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8E3197B00E700AE10F4 /* NumericTextTests.swift */; };
 		4ED605AB194BD30200DA29D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED605AA194BD30200DA29D2 /* AppDelegate.swift */; };
 		4ED605AD194BD30200DA29D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED605AC194BD30200DA29D2 /* ViewController.swift */; };
 		4ED605B0194BD30200DA29D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED605AE194BD30200DA29D2 /* Main.storyboard */; };
 		4ED605B2194BD30200DA29D2 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4ED605B1194BD30200DA29D2 /* Images.xcassets */; };
-		4EFD57FE1955C85E00CC9DCF /* KJNumericText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4EFD57FB1955C82F00CC9DCF /* KJNumericText.framework */; };
 		4EFD580A1955CB9400CC9DCF /* TipCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD58091955CB9400CC9DCF /* TipCalculation.swift */; };
-		4EFD580B1955CB9400CC9DCF /* TipCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD58091955CB9400CC9DCF /* TipCalculation.swift */; };
 		4EFD580D1955CC9D00CC9DCF /* TipCalculationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD580C1955CC9D00CC9DCF /* TipCalculationTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,23 +27,13 @@
 			remoteGlobalIDString = 4ED605A4194BD30200DA29D2;
 			remoteInfo = KJTipCalculator;
 		};
-		4EFD57FA1955C82F00CC9DCF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4EFD57F51955C82E00CC9DCF /* KJNumericText.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4EFD57D91955C82E00CC9DCF;
-			remoteInfo = KJNumericText;
-		};
-		4EFD57FC1955C82F00CC9DCF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 4EFD57F51955C82E00CC9DCF /* KJNumericText.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4EFD57E41955C82E00CC9DCF;
-			remoteInfo = KJNumericTextTests;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E23C8DE197B009B00AE10F4 /* NumericText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericText.swift; sourceTree = "<group>"; };
+		4E23C8DF197B009B00AE10F4 /* NumericTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextFieldDelegate.swift; sourceTree = "<group>"; };
+		4E23C8E2197B00E700AE10F4 /* NumericTextFieldDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextFieldDelegateTests.swift; sourceTree = "<group>"; };
+		4E23C8E3197B00E700AE10F4 /* NumericTextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextTests.swift; sourceTree = "<group>"; };
 		4E9FE860194CADC70015E1DA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		4E9FE861194CAE3D0015E1DA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		4ED605A5194BD30200DA29D2 /* KJTipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KJTipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,7 +44,6 @@
 		4ED605B1194BD30200DA29D2 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		4ED605B7194BD30200DA29D2 /* KJTipCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KJTipCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4ED605BC194BD30200DA29D2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		4EFD57F51955C82E00CC9DCF /* KJNumericText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = KJNumericText.xcodeproj; path = KJNumericText/KJNumericText.xcodeproj; sourceTree = "<group>"; };
 		4EFD58091955CB9400CC9DCF /* TipCalculation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculation.swift; sourceTree = "<group>"; };
 		4EFD580C1955CC9D00CC9DCF /* TipCalculationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalculationTests.swift; sourceTree = "<group>"; };
 		4EFD580E1955D6B500CC9DCF /* KJTipCalculatorScreenshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = KJTipCalculatorScreenshot.png; sourceTree = SOURCE_ROOT; };
@@ -64,7 +54,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4EFD57FE1955C85E00CC9DCF /* KJNumericText.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,7 +70,6 @@
 		4ED6059C194BD30200DA29D2 = {
 			isa = PBXGroup;
 			children = (
-				4EFD57F51955C82E00CC9DCF /* KJNumericText.xcodeproj */,
 				4ED605A7194BD30200DA29D2 /* KJTipCalculator */,
 				4ED605BA194BD30200DA29D2 /* KJTipCalculatorTests */,
 				4ED605A6194BD30200DA29D2 /* Products */,
@@ -100,6 +88,8 @@
 		4ED605A7194BD30200DA29D2 /* KJTipCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				4E23C8DE197B009B00AE10F4 /* NumericText.swift */,
+				4E23C8DF197B009B00AE10F4 /* NumericTextFieldDelegate.swift */,
 				4ED605AA194BD30200DA29D2 /* AppDelegate.swift */,
 				4EFD580F1955D6D000CC9DCF /* Documentation */,
 				4ED605B1194BD30200DA29D2 /* Images.xcassets */,
@@ -122,6 +112,8 @@
 		4ED605BA194BD30200DA29D2 /* KJTipCalculatorTests */ = {
 			isa = PBXGroup;
 			children = (
+				4E23C8E2197B00E700AE10F4 /* NumericTextFieldDelegateTests.swift */,
+				4E23C8E3197B00E700AE10F4 /* NumericTextTests.swift */,
 				4ED605BB194BD30200DA29D2 /* Supporting Files */,
 				4EFD580C1955CC9D00CC9DCF /* TipCalculationTests.swift */,
 			);
@@ -134,15 +126,6 @@
 				4ED605BC194BD30200DA29D2 /* Info.plist */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		4EFD57F61955C82E00CC9DCF /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				4EFD57FB1955C82F00CC9DCF /* KJNumericText.framework */,
-				4EFD57FD1955C82F00CC9DCF /* KJNumericTextTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		4EFD580F1955D6D000CC9DCF /* Documentation */ = {
@@ -222,12 +205,6 @@
 			mainGroup = 4ED6059C194BD30200DA29D2;
 			productRefGroup = 4ED605A6194BD30200DA29D2 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 4EFD57F61955C82E00CC9DCF /* Products */;
-					ProjectRef = 4EFD57F51955C82E00CC9DCF /* KJNumericText.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				4ED605A4194BD30200DA29D2 /* KJTipCalculator */,
@@ -235,23 +212,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		4EFD57FB1955C82F00CC9DCF /* KJNumericText.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = KJNumericText.framework;
-			remoteRef = 4EFD57FA1955C82F00CC9DCF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		4EFD57FD1955C82F00CC9DCF /* KJNumericTextTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = KJNumericTextTests.xctest;
-			remoteRef = 4EFD57FC1955C82F00CC9DCF /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		4ED605A3194BD30200DA29D2 /* Resources */ = {
@@ -277,9 +237,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E23C8E0197B009B00AE10F4 /* NumericText.swift in Sources */,
 				4ED605AD194BD30200DA29D2 /* ViewController.swift in Sources */,
 				4ED605AB194BD30200DA29D2 /* AppDelegate.swift in Sources */,
 				4EFD580A1955CB9400CC9DCF /* TipCalculation.swift in Sources */,
+				4E23C8E1197B009B00AE10F4 /* NumericTextFieldDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,9 +249,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4ECF9EC8194C957700173446 /* ViewController.swift in Sources */,
+				4E23C8E4197B00E700AE10F4 /* NumericTextFieldDelegateTests.swift in Sources */,
 				4EFD580D1955CC9D00CC9DCF /* TipCalculationTests.swift in Sources */,
-				4EFD580B1955CB9400CC9DCF /* TipCalculation.swift in Sources */,
+				4E23C8E5197B00E700AE10F4 /* NumericTextTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
