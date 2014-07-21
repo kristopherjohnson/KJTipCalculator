@@ -53,7 +53,7 @@ struct StrictScanner {
 }
 
 // Read Int value from String, returning nil if it is not a valid integer string
-func integerValueForString(s: String) -> Int? {
+public func integerValueForString(s: String) -> Int? {
     let scanner = StrictScanner(string: s)
     if let result = scanner.scanInteger() {
         if scanner.atEnd {
@@ -64,7 +64,7 @@ func integerValueForString(s: String) -> Int? {
 }
 
 // Read Double value from String, returning nil if it is not a valid floating-point string
-func doubleValueForString(s: String) -> Double? {
+public func doubleValueForString(s: String) -> Double? {
     let scanner = StrictScanner(string: s)
     if let result = scanner.scanDouble() {
         if scanner.atEnd {
@@ -75,7 +75,7 @@ func doubleValueForString(s: String) -> Double? {
 }
 
 // Determine whether given string is a valid integer string
-func isValidIntegerString(s: String) -> Bool {
+public func isValidIntegerString(s: String) -> Bool {
     if let value = integerValueForString(s) {
         return true
     }
@@ -85,7 +85,7 @@ func isValidIntegerString(s: String) -> Bool {
 }
 
 // Determine whether given string is a valid floating-point string
-func isValidDoubleString(s: String) -> Bool {
+public func isValidDoubleString(s: String) -> Bool {
     if let value = doubleValueForString(s) {
         return true
     }
@@ -96,27 +96,27 @@ func isValidDoubleString(s: String) -> Bool {
 
 // Protocol for object with a read-write "text" property
 @objc(kjtc_TextSettable)
-protocol TextSettable {
+public protocol TextSettable {
     var text: String! { get set }
 }
 
 // Return Int value of text property, or nil if empty
-func integerValueForText(ts: TextSettable) -> Int? {
+public func integerValueForText(ts: TextSettable) -> Int? {
     return integerValueForString(ts.text)
 }
 
 // Return Double value of text property, or nil if empty
-func doubleValueForText(ts: TextSettable) -> Double? {
+public func doubleValueForText(ts: TextSettable) -> Double? {
     return doubleValueForString(ts.text)
 }
 
 // Set text property to string representation of given number
-func setNumericValueForText(var ts: TextSettable, value: NSNumber) {
+public func setNumericValueForText(var ts: TextSettable, value: NSNumber) {
     ts.text = value.stringValue
 }
 
 // Set text property to string representation of given number using a Double format string ("%f", "%e", "%g", etc.)
-func setNumericValueForText(var ts: TextSettable, value: NSNumber, doubleFormat: NSString) {
+public func setNumericValueForText(var ts: TextSettable, value: NSNumber, doubleFormat: NSString) {
     ts.text = NSString(format: doubleFormat, value.doubleValue)
 }
 

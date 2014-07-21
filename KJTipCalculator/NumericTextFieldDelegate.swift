@@ -26,16 +26,16 @@ import UIKit
 
 // Implementation of UITextFieldDelegate that prevents non-numeric characters
 // from being entered in a numeric text field.
-class NumericTextFieldDelegate: NSObject, UITextFieldDelegate {
+public class NumericTextFieldDelegate: NSObject, UITextFieldDelegate {
     let maxLength: Int
     let allowDecimal: Bool
     
-    init(maxLength: Int, allowDecimal: Bool = false) {
+    public init(maxLength: Int, allowDecimal: Bool = false) {
         self.maxLength = maxLength
         self.allowDecimal = allowDecimal
     }
     
-    func textField(textField: UITextField!,
+    public func textField(textField: UITextField!,
         shouldChangeCharactersInRange range: NSRange,
         replacementString string: String!) -> Bool
     {

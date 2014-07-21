@@ -52,14 +52,14 @@ class ViewController: UIViewController {
     let defaultNumberInParty = 1
     let maxNumberInParty     = 99
     
-    @IBOutlet var subtotalTextField      : UITextField
-    @IBOutlet var tipPercentageTextField : UITextField
-    @IBOutlet var tipPercentageStepper   : UIStepper
-    @IBOutlet var numberInPartyTextField : UITextField
-    @IBOutlet var numberInPartyStepper   : UIStepper
-    @IBOutlet var tipOutput              : UILabel
-    @IBOutlet var totalOutput            : UILabel
-    @IBOutlet var splitOutput            : UILabel
+    @IBOutlet var subtotalTextField      : UITextField!
+    @IBOutlet var tipPercentageTextField : UITextField!
+    @IBOutlet var tipPercentageStepper   : UIStepper!
+    @IBOutlet var numberInPartyTextField : UITextField!
+    @IBOutlet var numberInPartyStepper   : UIStepper!
+    @IBOutlet var tipOutput              : UILabel!
+    @IBOutlet var totalOutput            : UILabel!
+    @IBOutlet var splitOutput            : UILabel!
     
     var integerTextFieldDelegate = NumericTextFieldDelegate(maxLength: 2)
     var subtotalTextFieldDelegate = NumericTextFieldDelegate(maxLength: 7, allowDecimal: true)
