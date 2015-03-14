@@ -35,14 +35,14 @@ public class NumericTextFieldDelegate: NSObject, UITextFieldDelegate {
         self.allowDecimal = allowDecimal
     }
     
-    public func textField(textField: UITextField!,
+    public func textField(textField: UITextField,
         shouldChangeCharactersInRange range: NSRange,
-        replacementString string: String!) -> Bool
+        replacementString string: String) -> Bool
     {
-        let originalText: NSString = textField.text
-        let proposedText: NSString = originalText.stringByReplacingCharactersInRange(range, withString: string)
+        let originalText = textField.text
+        let proposedText = (originalText as NSString).stringByReplacingCharactersInRange(range, withString: string) as String
         
-        let proposedLength = proposedText.length
+        let proposedLength = count(proposedText)
         if proposedLength > maxLength {
             return false
         }

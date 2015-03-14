@@ -117,7 +117,7 @@ public func setNumericValueForText(var ts: TextSettable, value: NSNumber) {
 
 // Set text property to string representation of given number using a Double format string ("%f", "%e", "%g", etc.)
 public func setNumericValueForText(var ts: TextSettable, value: NSNumber, doubleFormat: NSString) {
-    ts.text = NSString(format: doubleFormat, value.doubleValue)
+    ts.text = NSString(format: doubleFormat, value.doubleValue) as String
 }
 
 // Add these methods to UILabel
