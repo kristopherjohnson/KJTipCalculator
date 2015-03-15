@@ -11,6 +11,7 @@
 		4E23C8E1197B009B00AE10F4 /* NumericTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8DF197B009B00AE10F4 /* NumericTextFieldDelegate.swift */; };
 		4E23C8E4197B00E700AE10F4 /* NumericTextFieldDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8E2197B00E700AE10F4 /* NumericTextFieldDelegateTests.swift */; };
 		4E23C8E5197B00E700AE10F4 /* NumericTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8E3197B00E700AE10F4 /* NumericTextTests.swift */; };
+		4E71531B1AB51921007D7D77 /* OutputLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E71531A1AB51921007D7D77 /* OutputLabel.swift */; };
 		4ED605AB194BD30200DA29D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED605AA194BD30200DA29D2 /* AppDelegate.swift */; };
 		4ED605AD194BD30200DA29D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED605AC194BD30200DA29D2 /* ViewController.swift */; };
 		4ED605B0194BD30200DA29D2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4ED605AE194BD30200DA29D2 /* Main.storyboard */; };
@@ -34,6 +35,7 @@
 		4E23C8DF197B009B00AE10F4 /* NumericTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextFieldDelegate.swift; sourceTree = "<group>"; };
 		4E23C8E2197B00E700AE10F4 /* NumericTextFieldDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextFieldDelegateTests.swift; sourceTree = "<group>"; };
 		4E23C8E3197B00E700AE10F4 /* NumericTextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextTests.swift; sourceTree = "<group>"; };
+		4E71531A1AB51921007D7D77 /* OutputLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputLabel.swift; sourceTree = "<group>"; };
 		4E9FE860194CADC70015E1DA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		4E9FE861194CAE3D0015E1DA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
 		4ED605A5194BD30200DA29D2 /* KJTipCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KJTipCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +96,7 @@
 				4ED605AE194BD30200DA29D2 /* Main.storyboard */,
 				4E23C8DE197B009B00AE10F4 /* NumericText.swift */,
 				4E23C8DF197B009B00AE10F4 /* NumericTextFieldDelegate.swift */,
+				4E71531A1AB51921007D7D77 /* OutputLabel.swift */,
 				4ED605A8194BD30200DA29D2 /* Supporting Files */,
 				4EFD58091955CB9400CC9DCF /* TipCalculation.swift */,
 				4ED605AC194BD30200DA29D2 /* ViewController.swift */,
@@ -241,6 +244,7 @@
 				4E23C8E0197B009B00AE10F4 /* NumericText.swift in Sources */,
 				4ED605AD194BD30200DA29D2 /* ViewController.swift in Sources */,
 				4ED605AB194BD30200DA29D2 /* AppDelegate.swift in Sources */,
+				4E71531B1AB51921007D7D77 /* OutputLabel.swift in Sources */,
 				4EFD580A1955CB9400CC9DCF /* TipCalculation.swift in Sources */,
 				4E23C8E1197B009B00AE10F4 /* NumericTextFieldDelegate.swift in Sources */,
 			);
