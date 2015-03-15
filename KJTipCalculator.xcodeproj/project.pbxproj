@@ -35,6 +35,8 @@
 		4E23C8DF197B009B00AE10F4 /* NumericTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextFieldDelegate.swift; sourceTree = "<group>"; };
 		4E23C8E2197B00E700AE10F4 /* NumericTextFieldDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextFieldDelegateTests.swift; sourceTree = "<group>"; };
 		4E23C8E3197B00E700AE10F4 /* NumericTextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextTests.swift; sourceTree = "<group>"; };
+		4E2EDF3D1AB53EA5001492EE /* KJTipCalculatorUITests.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = KJTipCalculatorUITests.js; sourceTree = "<group>"; };
+		4E2EDF3E1AB53EA5001492EE /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
 		4E71531A1AB51921007D7D77 /* OutputLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputLabel.swift; sourceTree = "<group>"; };
 		4E9FE860194CADC70015E1DA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		4E9FE861194CAE3D0015E1DA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
@@ -69,12 +71,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E2EDF3C1AB53E6B001492EE /* UIAutomationTests */ = {
+			isa = PBXGroup;
+			children = (
+				4E2EDF3D1AB53EA5001492EE /* KJTipCalculatorUITests.js */,
+				4E2EDF3E1AB53EA5001492EE /* Makefile */,
+			);
+			path = UIAutomationTests;
+			sourceTree = "<group>";
+		};
 		4ED6059C194BD30200DA29D2 = {
 			isa = PBXGroup;
 			children = (
 				4ED605A7194BD30200DA29D2 /* KJTipCalculator */,
 				4ED605BA194BD30200DA29D2 /* KJTipCalculatorTests */,
 				4ED605A6194BD30200DA29D2 /* Products */,
+				4E2EDF3C1AB53E6B001492EE /* UIAutomationTests */,
 			);
 			sourceTree = "<group>";
 		};
