@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# This bash script will run the KJTipCalculatorUITests.js test script in the Simulator.
+#
+# Note that there are a lot of hard-coded paths that you will need to change if not
+# using the same simulator instance.
+
+# Simulator device path
+deviceId="/Users/kdj/Library/Developer/CoreSimulator/Devices/06995493-FDEA-406A-B9BD-797B812AE77E"
+
+# Note: using Xcode-beta.app
+templateFilePath="/Applications/Xcode-beta.app/Contents/Applications/Instruments.app/Contents/PlugIns/AutomationInstrument.xrplugin/Contents/Resources/Automation.tracetemplate"
+
+targetAppName="$deviceId/data/Containers/Bundle/Application/E37FE608-A0DA-4AB0-8B49-A9985231A73E/KJTipCalculator.app/KJTipCalculator"
+
+scriptFilePath="$(pwd)/KJTipCalculatorUITests.js"
+
+resultsFolderPath="/tmp/KJTipCalculatorUITestsResults"
+if [[ ! -d $resultsFolderPath ]]; then mkdir -p "$resultsFolderPath"; fi
+
+echo instruments -w "$deviceId" -t "$templateFilePath" "$targetAppName" -e UIASCRIPT "$scriptFilePath" -e UIARESULTSPATH "$resultsFolderPath"
+
+instruments -w "$deviceId" -t "$templateFilePath" "$targetAppName" -e UIASCRIPT "$scriptFilePath" -e UIARESULTSPATH "$resultsFolderPath"
+
