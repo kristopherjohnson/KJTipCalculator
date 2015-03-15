@@ -62,10 +62,25 @@ var testCases = [{
         numberInParty.setValue(2)
 
         target.delay(0.1)
-                 
+
         assertEquals("1.85", tip.value(), "calculated tip")
         assertEquals("14.19", total.value(), "calculated total")
         assertEquals("7.10", perPerson.value(), "calculated split")
+
+        UIALogger.logPass(name)
+    }
+}, {
+    name: "Test zero subtotal",
+    test: function(name) {
+        tipPercentage.setValue(15)
+        numberInParty.setValue(2)
+        checkSubtotal.setValue("0")
+
+        target.delay(0.1)
+
+        assertEquals("", tip.value(), "calculated tip")
+        assertEquals("", total.value(), "calculated total")
+        assertEquals("", perPerson.value(), "calculated split")
 
         UIALogger.logPass(name)
     }
