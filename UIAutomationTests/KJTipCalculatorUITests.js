@@ -72,9 +72,39 @@ var testCases = [{
 }, {
     name: "Test zero subtotal",
     test: function(name) {
-        tipPercentage.setValue(15)
+        tipPercentage.setValue("15.00")
         numberInParty.setValue(2)
         checkSubtotal.setValue("0")
+
+        target.delay(0.1)
+
+        assertEquals("", tip.value(), "calculated tip")
+        assertEquals("", total.value(), "calculated total")
+        assertEquals("", perPerson.value(), "calculated split")
+
+        UIALogger.logPass(name)
+    }
+}, {
+    name: "Test zero tip percentage",
+    test: function(name) {
+        checkSubtotal.setValue("20")
+        numberInParty.setValue("3")
+        tipPercentage.setValue("")
+
+        target.delay(0.1)
+
+        assertEquals("", tip.value(), "calculated tip")
+        assertEquals("", total.value(), "calculated total")
+        assertEquals("", perPerson.value(), "calculated split")
+
+        UIALogger.logPass(name)
+    }
+}, {
+    name: "Test zero number in party",
+    test: function(name) {
+        checkSubtotal.setValue("200")
+        tipPercentage.setValue("20")
+        numberInParty.setValue("0")
 
         target.delay(0.1)
 
