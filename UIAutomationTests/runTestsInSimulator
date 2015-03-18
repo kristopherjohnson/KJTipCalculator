@@ -18,7 +18,8 @@ scriptFilePath="$(pwd)/KJTipCalculatorUITests.js"
 resultsFolderPath="/tmp/KJTipCalculatorUITestsResults"
 if [[ ! -d $resultsFolderPath ]]; then mkdir -p "$resultsFolderPath"; fi
 
-echo instruments -w "$deviceId" -t "$templateFilePath" "$targetAppName" -e UIASCRIPT "$scriptFilePath" -e UIARESULTSPATH "$resultsFolderPath"
-
-instruments -w "$deviceId" -t "$templateFilePath" "$targetAppName" -e UIASCRIPT "$scriptFilePath" -e UIARESULTSPATH "$resultsFolderPath"
+instruments -w "$deviceId" \
+  -t "$templateFilePath" "$targetAppName" \
+  -e UIASCRIPT "$scriptFilePath" \
+  -e UIARESULTSPATH "$resultsFolderPath"
 
