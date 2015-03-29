@@ -3,7 +3,7 @@
 //  KJTipCalculator
 //
 //  Created by Kristopher Johnson on 6/21/14.
-//  Copyright (c) 2014 Kristopher Johnson. All rights reserved.
+//  Copyright (c) 2014, 2015 Kristopher Johnson. All rights reserved.
 //
 
 import XCTest
