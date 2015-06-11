@@ -25,7 +25,6 @@ import UIKit
 
 extension UIStepper {
     // Set value if proposed new value is within minimumValue...maximumValue
-    @objc(kjtc_ifInRangeSetValue:)
     func ifInRangeSetValue(proposedValue: NSNumber) -> Bool {
         let proposed = proposedValue.doubleValue
         if minimumValue <= proposed && proposed <= maximumValue {
@@ -136,16 +135,16 @@ class ViewController: UIViewController {
             numberInPartyTextField.textIntegerValue()) {
             
         case let (.Some(subtotal), .Some(tipPercentage), .Some(numberInParty))
-            where (subtotal > 0) && (tipPercentage > 0) && (numberInParty > 0):
+            where subtotal > 0 && tipPercentage > 0 && numberInParty > 0:
             
             let calc = TipCalculation(
                 subtotal: subtotal,
                 tipPercentage: tipPercentage,
                 numberInParty: numberInParty)
             
-            setText(tipOutput,   currencyValue: calc.tip)
-            setText(totalOutput, currencyValue: calc.total)
-            setText(splitOutput, currencyValue: calc.perPerson)
+            setTextForField(tipOutput,   currencyValue: calc.tip)
+            setTextForField(totalOutput, currencyValue: calc.total)
+            setTextForField(splitOutput, currencyValue: calc.perPerson)
             
         default:
             tipOutput.text = ""
@@ -154,8 +153,8 @@ class ViewController: UIViewController {
         }
     }
     
-    func setText(textSettable: TextSettable, currencyValue: Double) {
-        setNumericValueForText(textSettable, currencyValue, currencyFormat);
+    func setTextForField(field: TextSettable, currencyValue: Double) {
+        field.setTextNumericValue(currencyValue, format: currencyFormat)
     }
 }
 

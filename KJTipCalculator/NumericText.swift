@@ -76,92 +76,40 @@ public func doubleValueForString(s: String) -> Double? {
 
 // Determine whether given string is a valid integer string
 public func isValidIntegerString(s: String) -> Bool {
-    if let value = integerValueForString(s) {
-        return true
-    }
-    else {
-        return false
-    }
+    return integerValueForString(s) != nil
 }
 
 // Determine whether given string is a valid floating-point string
 public func isValidDoubleString(s: String) -> Bool {
-    if let value = doubleValueForString(s) {
-        return true
-    }
-    else {
-        return false
-    }
+    return doubleValueForString(s) != nil
 }
 
-// Protocol for object with a read-write "text" property
+// Protocol for Objective-C object with a read-write "text" property
 @objc(kjtc_TextSettable)
 public protocol TextSettable {
-    var text: String! { get set }
+    var text: String? { get set }
 }
 
-// Return Int value of text property, or nil if empty
-public func integerValueForText(ts: TextSettable) -> Int? {
-    return integerValueForString(ts.text)
-}
-
-// Return Double value of text property, or nil if empty
-public func doubleValueForText(ts: TextSettable) -> Double? {
-    return doubleValueForString(ts.text)
-}
-
-// Set text property to string representation of given number
-public func setNumericValueForText(var ts: TextSettable, value: NSNumber) {
-    ts.text = value.stringValue
-}
-
-// Set text property to string representation of given number using a Double format string ("%f", "%e", "%g", etc.)
-public func setNumericValueForText(var ts: TextSettable, value: NSNumber, doubleFormat: NSString) {
-    ts.text = NSString(format: doubleFormat, value.doubleValue) as String
-}
-
-// Add these methods to UILabel
-extension UILabel: TextSettable {
-    // Note: Not callable from Objective-C
+extension TextSettable {
     func textIntegerValue() -> Int? {
-        return integerValueForText(self)
+        guard let text = self.text else { return nil }
+        return integerValueForString(text)
     }
-    
-    // Note: Not callable from Objective-C
+
     func textDoubleValue() -> Double? {
-        return doubleValueForText(self)
+        guard let text = self.text else { return nil }
+        return doubleValueForString(text)
     }
     
-    @objc(kjtc_setTextNumericValue:)
     func setTextNumericValue(value: NSNumber) {
-        setNumericValueForText(self, value)
+        self.text = value.stringValue
     }
     
-    @objc(kjtc_setTextNumericValue:doubleFormat:)
-    func setTextNumericValue(value: NSNumber, doubleFormat: NSString) {
-        setNumericValueForText(self, value, doubleFormat)
+    func setTextNumericValue(value: NSNumber, format: NSString) {
+        self.text = NSString(format: format, value.doubleValue) as String
     }
 }
 
-// Add these methods to UITextField
-extension UITextField: TextSettable {
-    // Note: Not callable from Objective-C
-    func textIntegerValue() -> Int? {
-        return integerValueForText(self)
-    }
-    
-    // Note: Not callable from Objective-C
-    func textDoubleValue() -> Double? {
-        return doubleValueForText(self)
-    }
-    
-    @objc(kjtc_setTextNumericValue:)
-    func setTextNumericValue(value: NSNumber) {
-        setNumericValueForText(self, value)
-    }
-    
-    @objc(kjtc_setTextNumericValue:doubleFormat:)
-    func setTextNumericValue(value: NSNumber, doubleFormat: NSString) {
-        setNumericValueForText(self, value, doubleFormat)
-    }
-}
+extension UILabel: TextSettable {}
+
+extension UITextField: TextSettable {}

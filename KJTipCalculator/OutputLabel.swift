@@ -29,7 +29,7 @@ import UIKit
 /// that returns its accessibility label instead of something more useful.
 /// Our automation tests check the values of some of the labels.
 public class OutputLabel: UILabel {
-    override public var accessibilityValue: String! {
+    override public var accessibilityValue: String? {
         get { return self.text ?? "" }
         set { }
     }

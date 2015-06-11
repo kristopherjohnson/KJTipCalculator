@@ -39,10 +39,10 @@ public class NumericTextFieldDelegate: NSObject, UITextFieldDelegate {
         shouldChangeCharactersInRange range: NSRange,
         replacementString string: String) -> Bool
     {
-        let originalText = textField.text
-        let proposedText = (originalText as NSString).stringByReplacingCharactersInRange(range, withString: string) as String
+        let originalText = (textField.text ?? "") as NSString
+        let proposedText = originalText.stringByReplacingCharactersInRange(range, withString: string)
         
-        let proposedLength = count(proposedText)
+        let proposedLength = proposedText.characters.count
         if proposedLength > maxLength {
             return false
         }
