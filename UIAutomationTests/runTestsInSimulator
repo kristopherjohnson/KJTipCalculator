@@ -6,12 +6,12 @@
 # using the same simulator instance.
 
 # Simulator device path
-deviceId="/Users/kdj/Library/Developer/CoreSimulator/Devices/06995493-FDEA-406A-B9BD-797B812AE77E"
+deviceId="/Users/kdj/Library/Developer/CoreSimulator/Devices/61B90E01-B984-44FF-9CD8-C67532DFBABE"
 
 # Note: using Xcode-beta.app
-templateFilePath="/Applications/Xcode-beta.app/Contents/Applications/Instruments.app/Contents/PlugIns/AutomationInstrument.xrplugin/Contents/Resources/Automation.tracetemplate"
+templateFilePath="/Applications/Xcode.app/Contents/Applications/Instruments.app/Contents/PlugIns/AutomationInstrument.xrplugin/Contents/Resources/Automation.tracetemplate"
 
-targetAppName="$deviceId/data/Containers/Bundle/Application/E37FE608-A0DA-4AB0-8B49-A9985231A73E/KJTipCalculator.app/KJTipCalculator"
+targetAppName="$deviceId/data/Containers/Bundle/Application/96826763-7CE0-4B0B-AB97-9D60F07D3D6F/KJTipCalculator.app/KJTipCalculator"
 
 scriptFilePath="$(pwd)/KJTipCalculatorUITests.js"
 
