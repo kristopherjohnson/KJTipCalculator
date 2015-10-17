@@ -11,6 +11,7 @@
 		4E23C8E1197B009B00AE10F4 /* NumericTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8DF197B009B00AE10F4 /* NumericTextFieldDelegate.swift */; };
 		4E23C8E4197B00E700AE10F4 /* NumericTextFieldDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8E2197B00E700AE10F4 /* NumericTextFieldDelegateTests.swift */; };
 		4E23C8E5197B00E700AE10F4 /* NumericTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8E3197B00E700AE10F4 /* NumericTextTests.swift */; };
+		4E5C93FE1B2CC41B00CD1581 /* LaunchImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E5C93FD1B2CC41B00CD1581 /* LaunchImage.storyboard */; };
 		4E71531B1AB51921007D7D77 /* OutputLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E71531A1AB51921007D7D77 /* OutputLabel.swift */; };
 		4ED605AB194BD30200DA29D2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED605AA194BD30200DA29D2 /* AppDelegate.swift */; };
 		4ED605AD194BD30200DA29D2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED605AC194BD30200DA29D2 /* ViewController.swift */; };
@@ -37,6 +38,7 @@
 		4E23C8E3197B00E700AE10F4 /* NumericTextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextTests.swift; sourceTree = "<group>"; };
 		4E2EDF3D1AB53EA5001492EE /* KJTipCalculatorUITests.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = KJTipCalculatorUITests.js; sourceTree = "<group>"; };
 		4E2EDF3E1AB53EA5001492EE /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		4E5C93FD1B2CC41B00CD1581 /* LaunchImage.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchImage.storyboard; sourceTree = "<group>"; };
 		4E71531A1AB51921007D7D77 /* OutputLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OutputLabel.swift; sourceTree = "<group>"; };
 		4E9FE860194CADC70015E1DA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		4E9FE861194CAE3D0015E1DA /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = SOURCE_ROOT; };
@@ -120,6 +122,7 @@
 			isa = PBXGroup;
 			children = (
 				4ED605A9194BD30200DA29D2 /* Info.plist */,
+				4E5C93FD1B2CC41B00CD1581 /* LaunchImage.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -235,6 +238,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E5C93FE1B2CC41B00CD1581 /* LaunchImage.storyboard in Resources */,
 				4ED605B0194BD30200DA29D2 /* Main.storyboard in Resources */,
 				4ED605B2194BD30200DA29D2 /* Images.xcassets in Resources */,
 			);
@@ -379,7 +383,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = KJTipCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
@@ -393,7 +396,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = KJTipCalculator/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;

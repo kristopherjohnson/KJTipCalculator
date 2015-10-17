@@ -29,7 +29,7 @@ public struct TipCalculation {
     
     public var tip: Double       { return (Double(tipPercentage) * 0.01) * subtotal }
     public var total: Double     { return subtotal + tip }
-    public var perPerson: Double { return total / Double(numberInParty) }
+    public var perPerson: Double { return numberInParty < 1 ? total : (total / Double(numberInParty)) }
     
     public init(subtotal: Double, tipPercentage: Int, numberInParty: Int) {
         assert(numberInParty > 0)

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>EABE60D1-550D-416D-8E2B-EF36453E99D0</string>
 	<key>IDESourceControlProjectName</key>
-	<string>KJTipCalculator</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>244F6C8684647B6DF349D8187EEFE53A7C54F9F4</key>
 		<string>github.com:kristopherjohnson/KJTipCalculator.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>KJTipCalculator.xcodeproj</string>
+	<string>KJTipCalculator.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>244F6C8684647B6DF349D8187EEFE53A7C54F9F4</key>
