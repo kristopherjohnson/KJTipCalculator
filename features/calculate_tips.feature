@@ -3,6 +3,13 @@ Feature: Calculate tip, total, and split
   I want to calculate tip and total
   So I can tip appropriately and split the check
 
+Scenario: Don't display calculated values if no input
+  Given I am on the Main Screen
+  Then  check subtotal should be ""
+  And   tip should be ""
+  And   total should be ""
+  And   per-person should be ""
+
 Scenario: Calculate tip for $1000, 18%, 4 people
   Given I am on the Main Screen
   And   all input fields are cleared

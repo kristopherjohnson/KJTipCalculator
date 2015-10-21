@@ -56,7 +56,7 @@ Scenario: Calculate tip and adjust
   And   total should be ""
   And   per-person should be ""
 
-  When   I fill in "Check subtotal" with "15.00"
+  When  I fill in "Check subtotal" with "15.00"
   Then  tip should be "2.85"
   And   total should be "17.85"
   And   per-person should be "5.95"
