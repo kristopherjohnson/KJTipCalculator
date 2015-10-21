@@ -3,34 +3,21 @@ Feature: Calculate tip, total, and split
   I want to calculate tip and total
   So I can tip appropriately and split the check
 
-Scenario: Don't display calculated values if no input
-  Given I am on the Main Screen
-  Then  check subtotal should be ""
-  And   tip should be ""
-  And   total should be ""
-  And   per-person should be ""
-
-Scenario: Calculate tip for $1000, 18%, 4 people
+Scenario Outline: Calculate tip, total, and split
   Given I am on the Main Screen
   And   all input fields are cleared
-  When  I fill in text fields as follows:
-   | field           | text |
-   | Check subtotal  | 1000 |
-   | Tip percentage  | 18   |
-   | Number in party | 4    |
-  Then  tip should be "180.00"
-  And   total should be "1180.00"
-  And   per-person should be "295.00"
+  When  I fill in "Check subtotal" with "<subtotal>"
+  And   I fill in "Tip percentage" with "<percentage>"
+  And   I fill in "Number in party" with "<party>"
+  Then  tip should be "<tip>"
+  And   total should be "<total>"
+  And   per-person should be "<split>"
 
-Scenario: Calculate tip for $12.34, 15%, 2 people
-  Given I am on the Main Screen
-  And   all input fields are cleared
-  When  I fill in text fields as follows:
-   | field           | text  |
-   | Check subtotal  | 12.34 |
-   | Tip percentage  | 15    |
-   | Number in party | 2     |
-  Then  tip should be "1.85"
-  And   total should be "14.19"
-  And   per-person should be "7.10"
-
+Examples:
+  | subtotal | percentage | party | tip    | total   | split  |
+  | 1000     | 18         | 4     | 180.00 | 1180.00 | 295.00 |
+  | 12.34    | 15         | 2     | 1.85   | 14.19   | 7.10   |
+  |          | 20         | 1     |        |         |        |
+  | 1000     |            | 1     |        |         |        |
+  | 1000     | 20         |       |        |         |        |
+  | 1000     | 20         | 0     |        |         |        |
