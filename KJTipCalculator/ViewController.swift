@@ -76,6 +76,8 @@ class ViewController: UIViewController {
         tipPercentageStepper.minimumValue = Double(minTipPercentage)
         tipPercentageStepper.maximumValue = Double(maxTipPercentage)
         tipPercentageStepper.value = Double(defaultTipPercentage)
+        tipPercentageStepper.incrementImageForState(.Normal)?.accessibilityLabel = "Increase tip percentage"
+        tipPercentageStepper.decrementImageForState(.Normal)?.accessibilityLabel = "Decrease tip percentage"
         
         numberInPartyTextField.setTextNumericValue(defaultNumberInParty)
         numberInPartyTextField.delegate = integerTextFieldDelegate
@@ -83,6 +85,8 @@ class ViewController: UIViewController {
         numberInPartyStepper.minimumValue = Double(minNumberInParty)
         numberInPartyStepper.maximumValue = Double(maxNumberInParty)
         numberInPartyStepper.value = Double(defaultNumberInParty)
+        numberInPartyStepper.incrementImageForState(.Normal)?.accessibilityLabel = "Increase number in party"
+        numberInPartyStepper.decrementImageForState(.Normal)?.accessibilityLabel = "Decrease number in party"
     }
     
     override func viewWillAppear(animated: Bool) {

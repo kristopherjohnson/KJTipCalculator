@@ -1,5 +1,5 @@
 Feature: Calculate tip, total, and split
-  As a customer
+  As a user
   I want to calculate tip and total
   So I can tip appropriately and split the check
 

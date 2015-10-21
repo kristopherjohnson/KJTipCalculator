@@ -9,6 +9,27 @@ When /^all input fields are cleared$/ do
   clear_text("textField marked: 'Number in party'")
 end
 
+Then /^check subtotal should be "(.*)"$/ do |expected_text|
+  actual_text = query("textField marked: 'Check subtotal'", :text).first
+  unless expected_text == actual_text
+    fail "Check subtotal is incorrect. Expected '#{expected_text}', but got '#{actual_text}'."
+  end
+end
+
+Then /^tip percentage should be "(.*)"$/ do |expected_text|
+  actual_text = query("textField marked: 'Tip percentage'", :text).first
+  unless expected_text == actual_text
+    fail "Tip percentage is incorrect. Expected '#{expected_text}', but got '#{actual_text}'."
+  end
+end
+
+Then /^number in party should be "(.*)"$/ do |expected_text|
+  actual_text = query("textField marked: 'Number in party'", :text).first
+  unless expected_text == actual_text
+    fail "Number in party is incorrect. Expected '#{expected_text}', but got '#{actual_text}'."
+  end
+end
+
 Then /^tip should be "(.*)"$/ do |expected_text|
   actual_text = query("label accessibilityLabel:'Tip'", :text).first
   unless expected_text == actual_text
