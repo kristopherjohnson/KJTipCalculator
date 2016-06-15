@@ -1,5 +1,5 @@
 /*
-Copyright (c) 2014, 2015 Kristopher Johnson
+Copyright (c) 2014, 2015, 2016 Kristopher Johnson
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -46,11 +46,11 @@ class KJTipCalculatorUITests: XCTestCase {
 
         let clearButton = app.buttons["Clear"]
 
-        let percentageStepper = app.steppers.elementBound(by: 0)
+        let percentageStepper = app.steppers.element(boundBy: 0)
         let percentageDecrementButton = percentageStepper.buttons["Decrement"]
         let percentageIncrementButton = percentageStepper.buttons["Increment"]
 
-        let numberInPartyStepper = app.steppers.elementBound(by: 1)
+        let numberInPartyStepper = app.steppers.element(boundBy: 1)
         let numberInPartyDecrementButton = numberInPartyStepper.buttons["Decrement"]
         let numberInPartyIncrementButton = numberInPartyStepper.buttons["Increment"]
 
