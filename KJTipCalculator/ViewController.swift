@@ -25,7 +25,7 @@ import UIKit
 
 extension UIStepper {
     // Set value if proposed new value is within minimumValue...maximumValue
-    func ifInRangeSetValue(proposedValue: NSNumber) -> Bool {
+    func ifInRangeSetValue(_ proposedValue: NSNumber) -> Bool {
         let proposed = proposedValue.doubleValue
         if minimumValue <= proposed && proposed <= maximumValue {
             value = proposed
@@ -76,8 +76,8 @@ class ViewController: UIViewController {
         tipPercentageStepper.minimumValue = Double(minTipPercentage)
         tipPercentageStepper.maximumValue = Double(maxTipPercentage)
         tipPercentageStepper.value = Double(defaultTipPercentage)
-        tipPercentageStepper.incrementImageForState(.Normal)?.accessibilityLabel = "Increase tip percentage"
-        tipPercentageStepper.decrementImageForState(.Normal)?.accessibilityLabel = "Decrease tip percentage"
+        tipPercentageStepper.incrementImage(for: UIControlState())?.accessibilityLabel = "Increase tip percentage"
+        tipPercentageStepper.decrementImage(for: UIControlState())?.accessibilityLabel = "Decrease tip percentage"
         
         numberInPartyTextField.setTextNumericValue(defaultNumberInParty)
         numberInPartyTextField.delegate = integerTextFieldDelegate
@@ -85,47 +85,47 @@ class ViewController: UIViewController {
         numberInPartyStepper.minimumValue = Double(minNumberInParty)
         numberInPartyStepper.maximumValue = Double(maxNumberInParty)
         numberInPartyStepper.value = Double(defaultNumberInParty)
-        numberInPartyStepper.incrementImageForState(.Normal)?.accessibilityLabel = "Increase number in party"
-        numberInPartyStepper.decrementImageForState(.Normal)?.accessibilityLabel = "Decrease number in party"
+        numberInPartyStepper.incrementImage(for: UIControlState())?.accessibilityLabel = "Increase number in party"
+        numberInPartyStepper.decrementImage(for: UIControlState())?.accessibilityLabel = "Decrease number in party"
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         view.tintColor = appTintColor
         updateOutput()
         subtotalTextField.becomeFirstResponder()
     }
     
-    @IBAction func clearButtonWasTapped(sender: UIButton) {
+    @IBAction func clearButtonWasTapped(_ sender: UIButton) {
         subtotalTextField.text = ""
         subtotalTextField.becomeFirstResponder()
         updateOutput()
     }
     
-    @IBAction func subtotalTextFieldChanged(sender: UITextField) {
+    @IBAction func subtotalTextFieldChanged(_ sender: UITextField) {
         updateOutput()
     }
     
-    @IBAction func tipPercentageTextFieldChanged(sender: UITextField) {
+    @IBAction func tipPercentageTextFieldChanged(_ sender: UITextField) {
         if let value = sender.textIntegerValue() {
             tipPercentageStepper.ifInRangeSetValue(value)
         }
         updateOutput()
     }
     
-    @IBAction func tipPercentageStepperValueChanged(sender: UIStepper) {
+    @IBAction func tipPercentageStepperValueChanged(_ sender: UIStepper) {
         tipPercentageTextField.setTextNumericValue(sender.value)
         updateOutput()
     }
 
-    @IBAction func numberInPartyTextFieldChanged(sender: UITextField) {
+    @IBAction func numberInPartyTextFieldChanged(_ sender: UITextField) {
         if let value = sender.textIntegerValue() {
             numberInPartyStepper.ifInRangeSetValue(value)
         }
         updateOutput()
     }
     
-    @IBAction func numberInPartyStepperValueChanged(sender: UIStepper) {
+    @IBAction func numberInPartyStepperValueChanged(_ sender: UIStepper) {
         numberInPartyTextField.setTextNumericValue(sender.value)
         updateOutput()
     }
@@ -138,7 +138,7 @@ class ViewController: UIViewController {
             tipPercentageTextField.textIntegerValue(),
             numberInPartyTextField.textIntegerValue()) {
             
-        case let (.Some(subtotal), .Some(tipPercentage), .Some(numberInParty))
+        case let (.some(subtotal), .some(tipPercentage), .some(numberInParty))
             where subtotal > 0 && tipPercentage > 0 && numberInParty > 0:
             
             let calc = TipCalculation(
@@ -157,7 +157,7 @@ class ViewController: UIViewController {
         }
     }
     
-    func setTextForField(field: TextSettable, currencyValue: Double) {
+    func setTextForField(_ field: TextSettable, currencyValue: Double) {
         field.setTextNumericValue(currencyValue, format: currencyFormat)
     }
 }

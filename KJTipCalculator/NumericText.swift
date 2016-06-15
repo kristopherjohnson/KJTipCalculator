@@ -26,18 +26,18 @@ import UIKit
 // Wrapper for NSScanner that doesn't allow leading whitespace.
 // Returns Optional values rather than using pointer/inout parameters.
 struct StrictScanner {
-    let scanner: NSScanner
+    let scanner: Scanner
     
     init(string: String) {
-        scanner = NSScanner(string: string)
+        scanner = Scanner(string: string)
         scanner.charactersToBeSkipped = nil
     }
     
-    var atEnd: Bool { return scanner.atEnd }
+    var atEnd: Bool { return scanner.isAtEnd }
     
     func scanInteger() -> Int? {
         var value: Int = 0
-        if scanner.scanInteger(&value) {
+        if scanner.scanInt(&value) {
             return value
         }
         return nil
@@ -53,7 +53,7 @@ struct StrictScanner {
 }
 
 // Read Int value from String, returning nil if it is not a valid integer string
-public func integerValueForString(s: String) -> Int? {
+public func integerValueForString(_ s: String) -> Int? {
     let scanner = StrictScanner(string: s)
     if let result = scanner.scanInteger() {
         if scanner.atEnd {
@@ -64,7 +64,7 @@ public func integerValueForString(s: String) -> Int? {
 }
 
 // Read Double value from String, returning nil if it is not a valid floating-point string
-public func doubleValueForString(s: String) -> Double? {
+public func doubleValueForString(_ s: String) -> Double? {
     let scanner = StrictScanner(string: s)
     if let result = scanner.scanDouble() {
         if scanner.atEnd {
@@ -75,12 +75,12 @@ public func doubleValueForString(s: String) -> Double? {
 }
 
 // Determine whether given string is a valid integer string
-public func isValidIntegerString(s: String) -> Bool {
+public func isValidIntegerString(_ s: String) -> Bool {
     return integerValueForString(s) != nil
 }
 
 // Determine whether given string is a valid floating-point string
-public func isValidDoubleString(s: String) -> Bool {
+public func isValidDoubleString(_ s: String) -> Bool {
     return doubleValueForString(s) != nil
 }
 
@@ -101,11 +101,11 @@ extension TextSettable {
         return doubleValueForString(text)
     }
     
-    func setTextNumericValue(value: NSNumber) {
+    func setTextNumericValue(_ value: NSNumber) {
         self.text = value.stringValue
     }
     
-    func setTextNumericValue(value: NSNumber, format: NSString) {
+    func setTextNumericValue(_ value: NSNumber, format: NSString) {
         self.text = NSString(format: format, value.doubleValue) as String
     }
 }
