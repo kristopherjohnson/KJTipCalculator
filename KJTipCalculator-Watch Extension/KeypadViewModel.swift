@@ -5,42 +5,127 @@
 //  Copyright © 2016 Kristopher Johnson. All rights reserved.
 //
 
-import Foundation
-
+/// Delegate for KeypadViewModel.
 public protocol KeypadViewModelDelegate: class {
 
+    /// Invoked whenever the keypad display changes.
     func keypadViewModel(keypadViewModel: KeypadViewModel, displayTextDidChange: String)
 
+    /// Invoked when the keypad rejects an
+    /// addDigit(), addPeriod(), or delete() call.
     func keypadViewModelRejectedInput()
 }
 
+/// View model for the Subtotal entry keypad.
+///
+/// Provides calculator-like numeric entry.
+/// Allows up to four digits to the left of the
+/// decimal point, and up to two digits to the
+/// right of the decimal point.
 public class KeypadViewModel {
 
     /// Delegate notified as the state changes.
     public weak var delegate: KeypadViewModelDelegate? = nil
 
     /// Return the current displayed value.
-    public var displayText: String {
-        return "0"
-    }
+    public private(set) var displayText = "0"
 
-    /// Add a digit to the end of the display.
+    /// Maximum number of digits before the decimal point.
+    public static let wholeDigitsMaxCount = 4
+
+    /// Maximum number of digits after the decimal point.
+    public static let fractionalDigitsMaxCount = 2
+
+    /// Append a digit to the end of the display.
+    ///
+    /// - parameter digit: A value in the range 0...9.
     public func addDigit(digit: Int) {
+        if digit < 0 || 9 < digit || !canAcceptAnotherDigit {
+            notifyReject()
+            return
+        }
 
+        if displayText == "0" {
+            if digit == 0 {
+                return
+            }
+            else {
+                displayText = ""
+            }
+        }
+
+        let digitUnicodeScalar = UnicodeScalar(
+            KeypadViewModel.zeroUnicodeScalar + UInt32(digit))
+        displayText.append(digitUnicodeScalar)
+        notifyChange()
     }
 
-    /// Add a period at the end of the display.
-    public func addPeriod() {
-
+    /// Add a decimal point to the end of the display.
+    public func addDecimalPoint() {
+        if hasDecimalPoint {
+            notifyReject()
+            return
+        }
+        displayText.append(Character("."))
+        notifyChange()
     }
 
     /// Delete the last typed digit or period.
     public func delete() {
+        if displayText == "0" {
+            notifyReject()
+            return
+        }
 
+        if displayText.characters.count == 1 {
+            displayText = "0"
+        }
+        else {
+            displayText.removeAtIndex(displayText.endIndex.predecessor())
+        }
+        notifyChange()
     }
 
     /// Clear the display to "0".
     public func clear() {
+        if !(displayText == "0") {
+            displayText = "0"
+            notifyChange()
+        }
+    }
 
+    // MARK: - Private
+
+    private static let zeroUnicodeScalar = UnicodeScalar("0").value
+
+    private var canAcceptAnotherDigit: Bool {
+        if hasDecimalPoint {
+            return rightOfDecimalPointDigitCount < KeypadViewModel.fractionalDigitsMaxCount
+        }
+        else {
+            return displayText.characters.count < KeypadViewModel.wholeDigitsMaxCount
+        }
+    }
+
+    private var hasDecimalPoint: Bool {
+        return displayText.containsString(".")
+    }
+
+    private var rightOfDecimalPointDigitCount: Int {
+        let chars = displayText.characters
+        if let decimalPointIndex = chars.indexOf(Character(".")) {
+            return decimalPointIndex.successor().distanceTo(chars.endIndex)
+        }
+        else {
+            return 0
+        }
+    }
+
+    private func notifyChange() {
+        delegate?.keypadViewModel(self, displayTextDidChange: displayText)
+    }
+
+    private func notifyReject() {
+        delegate?.keypadViewModelRejectedInput()
     }
 }
