@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		368bb0a8482782b7413a1c37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED605AA194BD30200DA29D2 /* AppDelegate.swift */; };
 		4E09F94D1D25DF3500B29E74 /* KeypadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09F94C1D25DF3500B29E74 /* KeypadViewModel.swift */; };
+		4E09F9AF1D2837D800B29E74 /* KeypadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09F94C1D25DF3500B29E74 /* KeypadViewModel.swift */; };
+		4E09F9B11D28380900B29E74 /* KeypadViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09F9B01D28380900B29E74 /* KeypadViewModelTests.swift */; };
 		4E1CA30E1D1F5AD300118116 /* SubtotalInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CA30D1D1F5AD300118116 /* SubtotalInterfaceController.swift */; };
 		4E23C8E0197B009B00AE10F4 /* NumericText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8DE197B009B00AE10F4 /* NumericText.swift */; };
 		4E23C8E1197B009B00AE10F4 /* NumericTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8DF197B009B00AE10F4 /* NumericTextFieldDelegate.swift */; };
@@ -102,6 +104,9 @@
 
 /* Begin PBXFileReference section */
 		4E09F94C1D25DF3500B29E74 /* KeypadViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeypadViewModel.swift; sourceTree = "<group>"; };
+		4E09F9A71D28377200B29E74 /* KJTipCalculator-Watch Extension Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "KJTipCalculator-Watch Extension Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E09F9AB1D28377200B29E74 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E09F9B01D28380900B29E74 /* KeypadViewModelTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeypadViewModelTests.swift; sourceTree = "<group>"; };
 		4E1CA30D1D1F5AD300118116 /* SubtotalInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtotalInterfaceController.swift; sourceTree = "<group>"; };
 		4E23C8DE197B009B00AE10F4 /* NumericText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericText.swift; sourceTree = "<group>"; };
 		4E23C8DF197B009B00AE10F4 /* NumericTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextFieldDelegate.swift; sourceTree = "<group>"; };
@@ -145,6 +150,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4E09F9A41D28377200B29E74 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4E4801591D1F54BE008E3B8A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -185,6 +197,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4E09F9A81D28377200B29E74 /* KJTipCalculator-Watch Extension Tests */ = {
+			isa = PBXGroup;
+			children = (
+				4E09F9AB1D28377200B29E74 /* Info.plist */,
+				4E09F9B01D28380900B29E74 /* KeypadViewModelTests.swift */,
+			);
+			path = "KJTipCalculator-Watch Extension Tests";
+			sourceTree = "<group>";
+		};
 		4E2EDF3C1AB53E6B001492EE /* UIAutomationTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +275,7 @@
 				4E4FA3231BD9CDE500CD9772 /* KJTipCalculatorUITests */,
 				4E4801511D1F54BE008E3B8A /* KJTipCalculator-Watch */,
 				4E4801601D1F54BE008E3B8A /* KJTipCalculator-Watch Extension */,
+				4E09F9A81D28377200B29E74 /* KJTipCalculator-Watch Extension Tests */,
 				4E6977921BD2942C0020C393 /* Frameworks */,
 				4ED605A6194BD30200DA29D2 /* Products */,
 				4E2EDF3C1AB53E6B001492EE /* UIAutomationTests */,
@@ -269,6 +291,7 @@
 				4E4FA3221BD9CDE400CD9772 /* KJTipCalculatorUITests.xctest */,
 				4E4801501D1F54BE008E3B8A /* KJTipCalculator-Watch.app */,
 				4E48015C1D1F54BE008E3B8A /* KJTipCalculator-Watch Extension.appex */,
+				4E09F9A71D28377200B29E74 /* KJTipCalculator-Watch Extension Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -331,6 +354,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4E09F9A61D28377200B29E74 /* KJTipCalculator-Watch Extension Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E09F9AE1D28377200B29E74 /* Build configuration list for PBXNativeTarget "KJTipCalculator-Watch Extension Tests" */;
+			buildPhases = (
+				4E09F9A31D28377200B29E74 /* Sources */,
+				4E09F9A41D28377200B29E74 /* Frameworks */,
+				4E09F9A51D28377200B29E74 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KJTipCalculator-Watch Extension Tests";
+			productName = "KJTipCalculator-Watch Extension Tests";
+			productReference = 4E09F9A71D28377200B29E74 /* KJTipCalculator-Watch Extension Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4E48014F1D1F54BE008E3B8A /* KJTipCalculator-Watch */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E4801771D1F54BE008E3B8A /* Build configuration list for PBXNativeTarget "KJTipCalculator-Watch" */;
@@ -447,6 +487,9 @@
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Kristopher Johnson";
 				TargetAttributes = {
+					4E09F9A61D28377200B29E74 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
 					4E48014F1D1F54BE008E3B8A = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = D5E423632K;
@@ -488,11 +531,19 @@
 				4E4FA3211BD9CDE400CD9772 /* KJTipCalculatorUITests */,
 				4E48014F1D1F54BE008E3B8A /* KJTipCalculator-Watch */,
 				4E48015B1D1F54BE008E3B8A /* KJTipCalculator-Watch Extension */,
+				4E09F9A61D28377200B29E74 /* KJTipCalculator-Watch Extension Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4E09F9A51D28377200B29E74 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4E48014E1D1F54BE008E3B8A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -547,6 +598,15 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4E09F9A31D28377200B29E74 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E09F9B11D28380900B29E74 /* KeypadViewModelTests.swift in Sources */,
+				4E09F9AF1D2837D800B29E74 /* KeypadViewModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4E4801581D1F54BE008E3B8A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -668,6 +728,37 @@
 					"-lstdc++",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.kristopherjohnson.$(PRODUCT_NAME:rfc1034identifier)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4E09F9AC1D28377200B29E74 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "KJTipCalculator-Watch Extension Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.kristopherjohnson.KJTipCalculator-Watch-Extension-Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		4E09F9AD1D28377200B29E74 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "KJTipCalculator-Watch Extension Tests/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = "net.kristopherjohnson.KJTipCalculator-Watch-Extension-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -963,6 +1054,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4E09F9AE1D28377200B29E74 /* Build configuration list for PBXNativeTarget "KJTipCalculator-Watch Extension Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E09F9AC1D28377200B29E74 /* Debug */,
+				4E09F9AD1D28377200B29E74 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		4E4801751D1F54BE008E3B8A /* Build configuration list for PBXNativeTarget "KJTipCalculator-Watch Extension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
