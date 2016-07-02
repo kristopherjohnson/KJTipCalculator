@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -19,7 +19,6 @@
                         <subviews>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtotal" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XR6-iK-fEf">
                                 <rect key="frame" x="182" y="36" width="65" height="21"/>
-                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Subtotal label">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                     <bool key="isElement" value="NO"/>
@@ -30,7 +29,6 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Price" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qPH-Vf-miI" userLabel="subtotalTextField">
                                 <rect key="frame" x="255" y="28" width="90" height="36"/>
-                                <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="Price before tip" label="Check subtotal"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="90" id="QYS-Un-Yni"/>
@@ -44,7 +42,6 @@
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nc6-0M-Rkv" userLabel="clearButton">
                                 <rect key="frame" x="353" y="32" width="36" height="30"/>
-                                <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="Clear the subtotal field" label="Clear"/>
                                 <state key="normal" title="Clear">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -55,7 +52,6 @@
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip %" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2bU-t7-m4A">
                                 <rect key="frame" x="205" y="79" width="42" height="21"/>
-                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Tip percentage label">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                     <bool key="isElement" value="NO"/>
@@ -66,7 +62,6 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="15" borderStyle="roundedRect" placeholder="Percentage" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="mb7-fb-oJV" userLabel="tipPercentageTextField">
                                 <rect key="frame" x="255" y="72" width="90" height="36"/>
-                                <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="" label="Tip percentage">
                                     <accessibilityTraits key="traits" none="YES"/>
                                 </accessibility>
@@ -78,14 +73,12 @@
                             </textField>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="15" minimumValue="10" maximumValue="25" translatesAutoresizingMaskIntoConstraints="NO" id="aZj-y7-hCw" userLabel="tipPercentageStepper">
                                 <rect key="frame" x="353" y="75" width="94" height="29"/>
-                                <animations/>
                                 <connections>
                                     <action selector="tipPercentageStepperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="xYt-in-335"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Party of" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPI-7w-DXf">
                                 <rect key="frame" x="187" y="124" width="60" height="21"/>
-                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Number in party label">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                     <bool key="isElement" value="NO"/>
@@ -96,7 +89,6 @@
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="1" borderStyle="roundedRect" placeholder="Count" textAlignment="right" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0mt-6f-DE8" userLabel="numberInPartyTextField">
                                 <rect key="frame" x="255" y="116" width="90" height="36"/>
-                                <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="" label="Number in party"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
@@ -106,14 +98,12 @@
                             </textField>
                             <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="12" translatesAutoresizingMaskIntoConstraints="NO" id="Oqc-Wj-cJb" userLabel="numberInPartyStepper">
                                 <rect key="frame" x="353" y="120" width="94" height="29"/>
-                                <animations/>
                                 <connections>
                                     <action selector="numberInPartyStepperValueChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="86f-4k-K3T"/>
                                 </connections>
                             </stepper>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Qm4-su-srW" userLabel="divider">
                                 <rect key="frame" x="182" y="160" width="163" height="1"/>
-                                <animations/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <accessibility key="accessibilityConfiguration" label="">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
@@ -124,7 +114,6 @@
                             </view>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VFj-lQ-CHA">
                                 <rect key="frame" x="222" y="169" width="25" height="21"/>
-                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Tip label">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                     <bool key="isElement" value="NO"/>
@@ -135,7 +124,6 @@
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(tip)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7zM-Om-bbR" userLabel="tipOutput" customClass="OutputLabel" customModule="KJTipCalculator" customModuleProvider="target">
                                 <rect key="frame" x="311" y="169" width="34" height="21"/>
-                                <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="Subtotal multiplied by tip percentage" label="Tip">
                                     <accessibilityTraits key="traits" staticText="YES" updatesFrequently="YES"/>
                                 </accessibility>
@@ -145,7 +133,6 @@
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nVd-ec-uEy">
                                 <rect key="frame" x="209" y="198" width="38" height="21"/>
-                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Total label">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                     <bool key="isElement" value="NO"/>
@@ -156,7 +143,6 @@
                             </label>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(total)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHd-XD-FN9" userLabel="totalOutput" customClass="OutputLabel" customModule="KJTipCalculator" customModuleProvider="target">
                                 <rect key="frame" x="294" y="198" width="51" height="21"/>
-                                <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="Subtotal plus tip" label="Total">
                                     <accessibilityTraits key="traits" staticText="YES" updatesFrequently="YES"/>
                                 </accessibility>
@@ -164,9 +150,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Per person" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEa-nv-fOc">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Per person" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vEa-nv-fOc">
                                 <rect key="frame" x="164" y="227" width="83" height="21"/>
-                                <animations/>
                                 <accessibility key="accessibilityConfiguration" label="Per person label">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                     <bool key="isElement" value="NO"/>
@@ -175,9 +160,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="(split)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fev-jk-JwK" userLabel="splitOutput" customClass="OutputLabel" customModule="KJTipCalculator" customModuleProvider="target">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="(split)" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fev-jk-JwK" userLabel="splitOutput" customClass="OutputLabel" customModule="KJTipCalculator" customModuleProvider="target">
                                 <rect key="frame" x="296" y="227" width="49" height="21"/>
-                                <animations/>
                                 <accessibility key="accessibilityConfiguration" hint="Calculated per-person split" label="Per person">
                                     <accessibilityTraits key="traits" staticText="YES" updatesFrequently="YES"/>
                                 </accessibility>
@@ -186,7 +170,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mb7-fb-oJV" firstAttribute="width" secondItem="0mt-6f-DE8" secondAttribute="width" id="2gA-sQ-OAP"/>

@@ -8,10 +8,21 @@
 
 /* Begin PBXBuildFile section */
 		368bb0a8482782b7413a1c37 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ED605AA194BD30200DA29D2 /* AppDelegate.swift */; };
+		4E09F94D1D25DF3500B29E74 /* KeypadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09F94C1D25DF3500B29E74 /* KeypadViewModel.swift */; };
+		4E1CA30E1D1F5AD300118116 /* SubtotalInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CA30D1D1F5AD300118116 /* SubtotalInterfaceController.swift */; };
 		4E23C8E0197B009B00AE10F4 /* NumericText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8DE197B009B00AE10F4 /* NumericText.swift */; };
 		4E23C8E1197B009B00AE10F4 /* NumericTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8DF197B009B00AE10F4 /* NumericTextFieldDelegate.swift */; };
 		4E23C8E4197B00E700AE10F4 /* NumericTextFieldDelegateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8E2197B00E700AE10F4 /* NumericTextFieldDelegateTests.swift */; };
 		4E23C8E5197B00E700AE10F4 /* NumericTextTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8E3197B00E700AE10F4 /* NumericTextTests.swift */; };
+		4E4801541D1F54BE008E3B8A /* Interface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E4801521D1F54BE008E3B8A /* Interface.storyboard */; };
+		4E4801561D1F54BE008E3B8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E4801551D1F54BE008E3B8A /* Assets.xcassets */; };
+		4E48015D1D1F54BE008E3B8A /* KJTipCalculator-Watch Extension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 4E48015C1D1F54BE008E3B8A /* KJTipCalculator-Watch Extension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4E4801641D1F54BE008E3B8A /* InterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4801631D1F54BE008E3B8A /* InterfaceController.swift */; };
+		4E4801661D1F54BE008E3B8A /* ExtensionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4801651D1F54BE008E3B8A /* ExtensionDelegate.swift */; };
+		4E4801681D1F54BE008E3B8A /* NotificationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4801671D1F54BE008E3B8A /* NotificationController.swift */; };
+		4E48016A1D1F54BE008E3B8A /* ComplicationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4801691D1F54BE008E3B8A /* ComplicationController.swift */; };
+		4E48016C1D1F54BE008E3B8A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E48016B1D1F54BE008E3B8A /* Assets.xcassets */; };
+		4E4801701D1F54BE008E3B8A /* KJTipCalculator-Watch.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = 4E4801501D1F54BE008E3B8A /* KJTipCalculator-Watch.app */; };
 		4E4FA3251BD9CDE500CD9772 /* KJTipCalculatorUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E4FA3241BD9CDE500CD9772 /* KJTipCalculatorUITests.swift */; };
 		4E5C93FE1B2CC41B00CD1581 /* LaunchImage.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E5C93FD1B2CC41B00CD1581 /* LaunchImage.storyboard */; };
 		4E71531B1AB51921007D7D77 /* OutputLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E71531A1AB51921007D7D77 /* OutputLabel.swift */; };
@@ -34,6 +45,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		4E48015E1D1F54BE008E3B8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4ED6059D194BD30200DA29D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E48015B1D1F54BE008E3B8A;
+			remoteInfo = "KJTipCalculator-Watch Extension";
+		};
+		4E48016E1D1F54BE008E3B8A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4ED6059D194BD30200DA29D2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E48014F1D1F54BE008E3B8A;
+			remoteInfo = "KJTipCalculator-Watch";
+		};
 		4E4FA3271BD9CDE500CD9772 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 4ED6059D194BD30200DA29D2 /* Project object */;
@@ -50,13 +75,52 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4E4801761D1F54BE008E3B8A /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				4E48015D1D1F54BE008E3B8A /* KJTipCalculator-Watch Extension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E4801781D1F54BE008E3B8A /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				4E4801701D1F54BE008E3B8A /* KJTipCalculator-Watch.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4E09F94C1D25DF3500B29E74 /* KeypadViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeypadViewModel.swift; sourceTree = "<group>"; };
+		4E1CA30D1D1F5AD300118116 /* SubtotalInterfaceController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtotalInterfaceController.swift; sourceTree = "<group>"; };
 		4E23C8DE197B009B00AE10F4 /* NumericText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericText.swift; sourceTree = "<group>"; };
 		4E23C8DF197B009B00AE10F4 /* NumericTextFieldDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextFieldDelegate.swift; sourceTree = "<group>"; };
 		4E23C8E2197B00E700AE10F4 /* NumericTextFieldDelegateTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextFieldDelegateTests.swift; sourceTree = "<group>"; };
 		4E23C8E3197B00E700AE10F4 /* NumericTextTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumericTextTests.swift; sourceTree = "<group>"; };
 		4E2EDF3D1AB53EA5001492EE /* KJTipCalculatorUITests.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = KJTipCalculatorUITests.js; sourceTree = "<group>"; };
 		4E2EDF3E1AB53EA5001492EE /* Makefile */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.make; path = Makefile; sourceTree = "<group>"; };
+		4E4801501D1F54BE008E3B8A /* KJTipCalculator-Watch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KJTipCalculator-Watch.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E4801531D1F54BE008E3B8A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Interface.storyboard; sourceTree = "<group>"; };
+		4E4801551D1F54BE008E3B8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E4801571D1F54BE008E3B8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E48015C1D1F54BE008E3B8A /* KJTipCalculator-Watch Extension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "KJTipCalculator-Watch Extension.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E4801621D1F54BE008E3B8A /* PushNotificationPayload.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = PushNotificationPayload.apns; sourceTree = "<group>"; };
+		4E4801631D1F54BE008E3B8A /* InterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InterfaceController.swift; sourceTree = "<group>"; };
+		4E4801651D1F54BE008E3B8A /* ExtensionDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionDelegate.swift; sourceTree = "<group>"; };
+		4E4801671D1F54BE008E3B8A /* NotificationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationController.swift; sourceTree = "<group>"; };
+		4E4801691D1F54BE008E3B8A /* ComplicationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComplicationController.swift; sourceTree = "<group>"; };
+		4E48016B1D1F54BE008E3B8A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E48016D1D1F54BE008E3B8A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4E4FA31D1BD9CD8C00CD9772 /* KJTipCalculator-cal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "KJTipCalculator-cal.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4FA3221BD9CDE400CD9772 /* KJTipCalculatorUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KJTipCalculatorUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4FA3241BD9CDE500CD9772 /* KJTipCalculatorUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KJTipCalculatorUITests.swift; sourceTree = "<group>"; };
@@ -81,6 +145,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4E4801591D1F54BE008E3B8A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4E4FA31F1BD9CDE400CD9772 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -123,6 +194,40 @@
 			path = UIAutomationTests;
 			sourceTree = "<group>";
 		};
+		4E4801511D1F54BE008E3B8A /* KJTipCalculator-Watch */ = {
+			isa = PBXGroup;
+			children = (
+				4E4801521D1F54BE008E3B8A /* Interface.storyboard */,
+				4E4801551D1F54BE008E3B8A /* Assets.xcassets */,
+				4E4801571D1F54BE008E3B8A /* Info.plist */,
+			);
+			path = "KJTipCalculator-Watch";
+			sourceTree = "<group>";
+		};
+		4E4801601D1F54BE008E3B8A /* KJTipCalculator-Watch Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4E48016B1D1F54BE008E3B8A /* Assets.xcassets */,
+				4E4801691D1F54BE008E3B8A /* ComplicationController.swift */,
+				4E4801651D1F54BE008E3B8A /* ExtensionDelegate.swift */,
+				4E48016D1D1F54BE008E3B8A /* Info.plist */,
+				4E4801631D1F54BE008E3B8A /* InterfaceController.swift */,
+				4E09F94C1D25DF3500B29E74 /* KeypadViewModel.swift */,
+				4E4801671D1F54BE008E3B8A /* NotificationController.swift */,
+				4E1CA30D1D1F5AD300118116 /* SubtotalInterfaceController.swift */,
+				4E4801611D1F54BE008E3B8A /* Supporting Files */,
+			);
+			path = "KJTipCalculator-Watch Extension";
+			sourceTree = "<group>";
+		};
+		4E4801611D1F54BE008E3B8A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				4E4801621D1F54BE008E3B8A /* PushNotificationPayload.apns */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		4E4FA3231BD9CDE500CD9772 /* KJTipCalculatorUITests */ = {
 			isa = PBXGroup;
 			children = (
@@ -147,6 +252,8 @@
 				4ED605A7194BD30200DA29D2 /* KJTipCalculator */,
 				4ED605BA194BD30200DA29D2 /* KJTipCalculatorTests */,
 				4E4FA3231BD9CDE500CD9772 /* KJTipCalculatorUITests */,
+				4E4801511D1F54BE008E3B8A /* KJTipCalculator-Watch */,
+				4E4801601D1F54BE008E3B8A /* KJTipCalculator-Watch Extension */,
 				4E6977921BD2942C0020C393 /* Frameworks */,
 				4ED605A6194BD30200DA29D2 /* Products */,
 				4E2EDF3C1AB53E6B001492EE /* UIAutomationTests */,
@@ -160,6 +267,8 @@
 				4ED605B7194BD30200DA29D2 /* KJTipCalculatorTests.xctest */,
 				4E4FA31D1BD9CD8C00CD9772 /* KJTipCalculator-cal.app */,
 				4E4FA3221BD9CDE400CD9772 /* KJTipCalculatorUITests.xctest */,
+				4E4801501D1F54BE008E3B8A /* KJTipCalculator-Watch.app */,
+				4E48015C1D1F54BE008E3B8A /* KJTipCalculator-Watch Extension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -222,6 +331,40 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4E48014F1D1F54BE008E3B8A /* KJTipCalculator-Watch */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E4801771D1F54BE008E3B8A /* Build configuration list for PBXNativeTarget "KJTipCalculator-Watch" */;
+			buildPhases = (
+				4E48014E1D1F54BE008E3B8A /* Resources */,
+				4E4801761D1F54BE008E3B8A /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E48015F1D1F54BE008E3B8A /* PBXTargetDependency */,
+			);
+			name = "KJTipCalculator-Watch";
+			productName = "KJTipCalculator-Watch";
+			productReference = 4E4801501D1F54BE008E3B8A /* KJTipCalculator-Watch.app */;
+			productType = "com.apple.product-type.application.watchapp2";
+		};
+		4E48015B1D1F54BE008E3B8A /* KJTipCalculator-Watch Extension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E4801751D1F54BE008E3B8A /* Build configuration list for PBXNativeTarget "KJTipCalculator-Watch Extension" */;
+			buildPhases = (
+				4E4801581D1F54BE008E3B8A /* Sources */,
+				4E4801591D1F54BE008E3B8A /* Frameworks */,
+				4E48015A1D1F54BE008E3B8A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "KJTipCalculator-Watch Extension";
+			productName = "KJTipCalculator-Watch Extension";
+			productReference = 4E48015C1D1F54BE008E3B8A /* KJTipCalculator-Watch Extension.appex */;
+			productType = "com.apple.product-type.watchkit2-extension";
+		};
 		4E4FA3211BD9CDE400CD9772 /* KJTipCalculatorUITests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4E4FA32B1BD9CDE500CD9772 /* Build configuration list for PBXNativeTarget "KJTipCalculatorUITests" */;
@@ -247,10 +390,12 @@
 				4ED605A1194BD30200DA29D2 /* Sources */,
 				4ED605A2194BD30200DA29D2 /* Frameworks */,
 				4ED605A3194BD30200DA29D2 /* Resources */,
+				4E4801781D1F54BE008E3B8A /* Embed Watch Content */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				4E48016F1D1F54BE008E3B8A /* PBXTargetDependency */,
 			);
 			name = KJTipCalculator;
 			productName = KJTipCalculator;
@@ -298,10 +443,18 @@
 		4ED6059D194BD30200DA29D2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0710;
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = "Kristopher Johnson";
 				TargetAttributes = {
+					4E48014F1D1F54BE008E3B8A = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = D5E423632K;
+					};
+					4E48015B1D1F54BE008E3B8A = {
+						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = D5E423632K;
+					};
 					4E4FA3211BD9CDE400CD9772 = {
 						CreatedOnToolsVersion = 7.1;
 						TestTargetID = 4ED605A4194BD30200DA29D2;
@@ -333,11 +486,30 @@
 				4ED605B6194BD30200DA29D2 /* KJTipCalculatorTests */,
 				6205a5d1981fcd8fd2fe253b /* KJTipCalculator-cal */,
 				4E4FA3211BD9CDE400CD9772 /* KJTipCalculatorUITests */,
+				4E48014F1D1F54BE008E3B8A /* KJTipCalculator-Watch */,
+				4E48015B1D1F54BE008E3B8A /* KJTipCalculator-Watch Extension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4E48014E1D1F54BE008E3B8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E4801561D1F54BE008E3B8A /* Assets.xcassets in Resources */,
+				4E4801541D1F54BE008E3B8A /* Interface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E48015A1D1F54BE008E3B8A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E48016C1D1F54BE008E3B8A /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4E4FA3201BD9CDE400CD9772 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -375,6 +547,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4E4801581D1F54BE008E3B8A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E4801681D1F54BE008E3B8A /* NotificationController.swift in Sources */,
+				4E1CA30E1D1F5AD300118116 /* SubtotalInterfaceController.swift in Sources */,
+				4E09F94D1D25DF3500B29E74 /* KeypadViewModel.swift in Sources */,
+				4E48016A1D1F54BE008E3B8A /* ComplicationController.swift in Sources */,
+				4E4801661D1F54BE008E3B8A /* ExtensionDelegate.swift in Sources */,
+				4E4801641D1F54BE008E3B8A /* InterfaceController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4E4FA31E1BD9CDE400CD9772 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -422,6 +607,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		4E48015F1D1F54BE008E3B8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E48015B1D1F54BE008E3B8A /* KJTipCalculator-Watch Extension */;
+			targetProxy = 4E48015E1D1F54BE008E3B8A /* PBXContainerItemProxy */;
+		};
+		4E48016F1D1F54BE008E3B8A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E48014F1D1F54BE008E3B8A /* KJTipCalculator-Watch */;
+			targetProxy = 4E48016E1D1F54BE008E3B8A /* PBXContainerItemProxy */;
+		};
 		4E4FA3281BD9CDE500CD9772 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 4ED605A4194BD30200DA29D2 /* KJTipCalculator */;
@@ -435,6 +630,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		4E4801521D1F54BE008E3B8A /* Interface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E4801531D1F54BE008E3B8A /* Base */,
+			);
+			name = Interface.storyboard;
+			sourceTree = "<group>";
+		};
 		4ED605AE194BD30200DA29D2 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -456,7 +659,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				INFOPLIST_FILE = KJTipCalculator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -466,6 +669,94 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "net.kristopherjohnson.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		4E4801711D1F54BE008E3B8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = KJTipCalculator_Watch_Extension;
+				INFOPLIST_FILE = "KJTipCalculator-Watch/Info.plist";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = net.kristopherjohnson.KJTipCalculator.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		4E4801721D1F54BE008E3B8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				IBSC_MODULE = KJTipCalculator_Watch_Extension;
+				INFOPLIST_FILE = "KJTipCalculator-Watch/Info.plist";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = net.kristopherjohnson.KJTipCalculator.watchkitapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Release;
+		};
+		4E4801731D1F54BE008E3B8A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "KJTipCalculator-Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = net.kristopherjohnson.KJTipCalculator.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
+			};
+			name = Debug;
+		};
+		4E4801741D1F54BE008E3B8A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_COMPLICATION_NAME = Complication;
+				CLANG_ANALYZER_NONNULL = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "KJTipCalculator-Watch Extension/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = net.kristopherjohnson.KJTipCalculator.watchkitapp.watchkitextension;
+				PRODUCT_NAME = "${TARGET_NAME}";
+				PROVISIONING_PROFILE = "";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 2.2;
 			};
 			name = Release;
 		};
@@ -588,7 +879,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = KJTipCalculator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.kristopherjohnson.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -601,7 +892,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = KJTipCalculator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "net.kristopherjohnson.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -656,7 +947,7 @@
 					"\"$(SRCROOT)\"",
 				);
 				INFOPLIST_FILE = KJTipCalculator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -672,6 +963,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4E4801751D1F54BE008E3B8A /* Build configuration list for PBXNativeTarget "KJTipCalculator-Watch Extension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E4801731D1F54BE008E3B8A /* Debug */,
+				4E4801741D1F54BE008E3B8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E4801771D1F54BE008E3B8A /* Build configuration list for PBXNativeTarget "KJTipCalculator-Watch" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E4801711D1F54BE008E3B8A /* Debug */,
+				4E4801721D1F54BE008E3B8A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4E4FA32B1BD9CDE500CD9772 /* Build configuration list for PBXNativeTarget "KJTipCalculatorUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -679,6 +988,7 @@
 				4E4FA32A1BD9CDE500CD9772 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		4ED605A0194BD30200DA29D2 /* Build configuration list for PBXProject "KJTipCalculator" */ = {
 			isa = XCConfigurationList;

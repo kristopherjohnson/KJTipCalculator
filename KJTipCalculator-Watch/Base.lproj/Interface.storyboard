@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="AgC-eL-Hgc">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="10032"/>
+    </dependencies>
+    <scenes>
+        <!--KJTipCalc-->
+        <scene sceneID="aou-V4-d1y">
+            <objects>
+                <controller identifier="main" title="KJTipCalc" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="KJTipCalculator_Watch" customModuleProvider="target">
+                    <items>
+                        <button width="1" alignment="left" title="999.99" id="cF9-jl-iAI">
+                            <connections>
+                                <segue destination="4VU-Us-55q" kind="push" id="JVx-tI-cft"/>
+                            </connections>
+                        </button>
+                        <group width="1" alignment="center" verticalAlignment="bottom" layout="vertical" id="BJk-EC-nDK">
+                            <items>
+                                <label width="136" alignment="center" text="Tip: 999.99" textAlignment="center" id="qlg-RX-aGy">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                </label>
+                                <label width="136" alignment="center" text="Total: 9999.99" textAlignment="center" id="R1q-Jr-aYb">
+                                    <fontDescription key="font" style="UICTFontTextStyleTitle2"/>
+                                </label>
+                                <group width="1" alignment="center" verticalAlignment="bottom" spacing="4" id="Quh-c2-LS6">
+                                    <items>
+                                        <picker width="0.5" height="62" alignment="left" focusStyle="sequence" id="QnM-gm-8GR"/>
+                                        <picker width="0.5" height="62" alignment="left" focusStyle="sequence" id="cK9-L3-dzZ"/>
+                                    </items>
+                                    <edgeInsets key="margins" left="4" right="4" top="8" bottom="0.0"/>
+                                </group>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="numberInPartyPicker" destination="cK9-L3-dzZ" id="LQe-EZ-2ty"/>
+                        <outlet property="tipLabel" destination="qlg-RX-aGy" id="icg-ns-dnR"/>
+                        <outlet property="tipPercentagePicker" destination="QnM-gm-8GR" id="xSy-8d-6Kf"/>
+                        <outlet property="totalLabel" destination="R1q-Jr-aYb" id="PBF-oU-WuQ"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="220" y="273"/>
+        </scene>
+        <!--Subtotal-->
+        <scene sceneID="2ri-dt-ab9">
+            <objects>
+                <controller identifier="subtotal" title="Subtotal" spacing="2" id="4VU-Us-55q" customClass="SubtotalInterfaceController" customModule="KJTipCalculator_Watch_Extension">
+                    <items>
+                        <group width="1" alignment="left" id="fSi-iA-Upw">
+                            <items>
+                                <label alignment="right" verticalAlignment="center" accessibilityLabel="Subtotal" accessibilityHint="Subtotal value" text="9999.99" id="cc8-gh-pLw"/>
+                                <button width="0.33000000000000002" height="24" alignment="right" verticalAlignment="center" accessibilityLabel="Clear" accessibilityHint="Set subtotal to zero" accessibilityValue="Clear" title="C" id="wTX-pX-xG0">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <connections>
+                                        <action selector="keypadClearTapped" destination="4VU-Us-55q" id="iBm-8x-wfA"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="D0i-i8-wkI">
+                            <items>
+                                <button width="0.33000000000000002" height="37" alignment="left" verticalAlignment="center" accessibilityLabel="7" accessibilityHint="Enter 7 digit" accessibilityValue="7" title="7" id="hNP-iW-PLK">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <connections>
+                                        <action selector="keypad7Tapped" destination="4VU-Us-55q" id="gx6-sy-yXe"/>
+                                    </connections>
+                                </button>
+                                <button width="0.34000000000000002" height="37" alignment="left" verticalAlignment="center" accessibilityLabel="8" accessibilityHint="Enter 8 digit" accessibilityValue="8" title="8" id="TUc-PN-KoC">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <connections>
+                                        <action selector="keypad8Tapped" destination="4VU-Us-55q" id="xRe-6y-2DM"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="37" alignment="left" verticalAlignment="center" accessibilityLabel="9" accessibilityHint="Enter 9 digit" accessibilityValue="9" title="9" id="xzY-cg-z4E">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <connections>
+                                        <action selector="keypad9Tapped" destination="4VU-Us-55q" id="NMu-8b-Pl0"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="SiY-ge-DoU">
+                            <items>
+                                <button width="0.33000000000000002" height="37" alignment="left" verticalAlignment="center" accessibilityLabel="4" accessibilityHint="Enter 4 digit" accessibilityValue="4" title="4" id="mGj-dn-rKQ">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <connections>
+                                        <action selector="keypad4Tapped" destination="4VU-Us-55q" id="gWY-sP-ILw"/>
+                                    </connections>
+                                </button>
+                                <button width="0.34000000000000002" height="37" alignment="left" verticalAlignment="center" accessibilityLabel="5" accessibilityHint="Enter 5 digit" accessibilityValue="5" title="5" id="VtR-Hz-7PX">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <connections>
+                                        <action selector="keypad5Tapped" destination="4VU-Us-55q" id="1rp-Ux-OkI"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="37" alignment="left" verticalAlignment="center" accessibilityLabel="6" accessibilityHint="Enter 6 digit" accessibilityValue="6" title="6" id="TCy-tk-1tx">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <connections>
+                                        <action selector="keypad6Tapped" destination="4VU-Us-55q" id="LmC-c4-c62"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="IyL-sW-1k1">
+                            <items>
+                                <button width="0.33000000000000002" height="37" alignment="left" verticalAlignment="center" accessibilityLabel="1" accessibilityHint="Enter 1 digit" accessibilityValue="1" title="1" id="SAa-xG-Js3">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <connections>
+                                        <action selector="keypad1Tapped" destination="4VU-Us-55q" id="UJI-vS-gut"/>
+                                    </connections>
+                                </button>
+                                <button width="0.34000000000000002" height="37" alignment="left" verticalAlignment="center" accessibilityLabel="2" accessibilityHint="Enter 2 digit" accessibilityValue="2" title="2" id="Kmg-bK-gDY">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <connections>
+                                        <action selector="keypad2Tapped" destination="4VU-Us-55q" id="vA7-VW-lFB"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="37" alignment="left" verticalAlignment="center" accessibilityLabel="3" accessibilityHint="Enter 3 digit" accessibilityValue="3" title="3" id="iF6-vB-3Df">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <connections>
+                                        <action selector="keypad3Tapped" destination="4VU-Us-55q" id="BX4-dk-kXE"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                        <group width="1" alignment="center" verticalAlignment="bottom" id="cSz-r4-o5s">
+                            <items>
+                                <button width="0.33000000000000002" height="37" alignment="left" verticalAlignment="center" accessibilityLabel="Period" accessibilityHint="Type a period" accessibilityValue="Period" title="." id="mEU-5i-HJx">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <connections>
+                                        <action selector="keypadPeriodTapped" destination="4VU-Us-55q" id="TxS-h9-0YG"/>
+                                    </connections>
+                                </button>
+                                <button width="0.34000000000000002" height="37" alignment="left" verticalAlignment="center" accessibilityLabel="0" accessibilityHint="Enter 0 digit" accessibilityValue="0" title="0" id="u9b-Bm-LRH">
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <connections>
+                                        <action selector="keypad0Tapped" destination="4VU-Us-55q" id="Gz1-VB-ci8"/>
+                                    </connections>
+                                </button>
+                                <button width="0.33000000000000002" height="37" alignment="left" verticalAlignment="center" accessibilityLabel="Delete" accessibilityHint="Delete last digit" accessibilityValue="Delete" title="⌫" id="kEp-uc-Piy">
+                                    <color key="titleColor" red="1" green="1" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    <connections>
+                                        <action selector="keypadDeleteTapped" destination="4VU-Us-55q" id="qJi-5k-EJH"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <connections>
+                        <outlet property="keypad0" destination="u9b-Bm-LRH" id="aYA-7F-NaP"/>
+                        <outlet property="keypad1" destination="SAa-xG-Js3" id="tvJ-fZ-YKM"/>
+                        <outlet property="keypad2" destination="Kmg-bK-gDY" id="tpe-YH-cPt"/>
+                        <outlet property="keypad3" destination="iF6-vB-3Df" id="CcG-MG-EoR"/>
+                        <outlet property="keypad4" destination="mGj-dn-rKQ" id="oAy-KU-UbD"/>
+                        <outlet property="keypad5" destination="VtR-Hz-7PX" id="zkY-5e-6MV"/>
+                        <outlet property="keypad6" destination="TCy-tk-1tx" id="vyI-s6-vwQ"/>
+                        <outlet property="keypad7" destination="hNP-iW-PLK" id="uBq-nq-3pM"/>
+                        <outlet property="keypad8" destination="TUc-PN-KoC" id="YEf-7A-7Xh"/>
+                        <outlet property="keypad9" destination="xzY-cg-z4E" id="K2D-T4-0n1"/>
+                        <outlet property="keypadClear" destination="wTX-pX-xG0" id="LEn-Yi-KqQ"/>
+                        <outlet property="keypadDelete" destination="kEp-uc-Piy" id="Csb-CK-A4E"/>
+                        <outlet property="keypadPeriod" destination="mEU-5i-HJx" id="BQA-Nb-Aor"/>
+                        <outlet property="subtotalLabel" destination="cc8-gh-pLw" id="plC-Jx-d4S"/>
+                    </connections>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="468" y="273"/>
+        </scene>
+        <!--Static Notification Interface Controller-->
+        <scene sceneID="AEw-b0-oYE">
+            <objects>
+                <notificationController id="YCC-NB-fut">
+                    <items>
+                        <label alignment="left" text="Alert Label" id="IdU-wH-bcW"/>
+                    </items>
+                    <notificationCategory key="notificationCategory" identifier="myCategory" id="JfB-70-Muf"/>
+                    <connections>
+                        <outlet property="notificationAlertLabel" destination="IdU-wH-bcW" id="JKC-fr-R95"/>
+                        <segue destination="4sK-HA-Art" kind="relationship" relationship="dynamicNotificationInterface" id="kXh-Jw-8B1"/>
+                    </connections>
+                </notificationController>
+            </objects>
+            <point key="canvasLocation" x="220" y="643"/>
+        </scene>
+        <!--Notification Controller-->
+        <scene sceneID="ZPc-GJ-vnh">
+            <objects>
+                <controller id="4sK-HA-Art" customClass="NotificationController" customModule="KJTipCalculator_Watch" customModuleProvider="target"/>
+            </objects>
+            <point key="canvasLocation" x="468" y="643"/>
+        </scene>
+    </scenes>
+</document>
