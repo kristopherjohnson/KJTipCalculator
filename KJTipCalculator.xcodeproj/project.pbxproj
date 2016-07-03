@@ -11,6 +11,7 @@
 		4E09F94D1D25DF3500B29E74 /* KeypadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09F94C1D25DF3500B29E74 /* KeypadViewModel.swift */; };
 		4E09F9AF1D2837D800B29E74 /* KeypadViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09F94C1D25DF3500B29E74 /* KeypadViewModel.swift */; };
 		4E09F9B11D28380900B29E74 /* KeypadViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E09F9B01D28380900B29E74 /* KeypadViewModelTests.swift */; };
+		4E09F9B21D287E1F00B29E74 /* TipCalculation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EFD58091955CB9400CC9DCF /* TipCalculation.swift */; };
 		4E1CA30E1D1F5AD300118116 /* SubtotalInterfaceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1CA30D1D1F5AD300118116 /* SubtotalInterfaceController.swift */; };
 		4E23C8E0197B009B00AE10F4 /* NumericText.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8DE197B009B00AE10F4 /* NumericText.swift */; };
 		4E23C8E1197B009B00AE10F4 /* NumericTextFieldDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E23C8DF197B009B00AE10F4 /* NumericTextFieldDelegate.swift */; };
@@ -615,6 +616,7 @@
 				4E1CA30E1D1F5AD300118116 /* SubtotalInterfaceController.swift in Sources */,
 				4E09F94D1D25DF3500B29E74 /* KeypadViewModel.swift in Sources */,
 				4E48016A1D1F54BE008E3B8A /* ComplicationController.swift in Sources */,
+				4E09F9B21D287E1F00B29E74 /* TipCalculation.swift in Sources */,
 				4E4801661D1F54BE008E3B8A /* ExtensionDelegate.swift in Sources */,
 				4E4801641D1F54BE008E3B8A /* InterfaceController.swift in Sources */,
 			);

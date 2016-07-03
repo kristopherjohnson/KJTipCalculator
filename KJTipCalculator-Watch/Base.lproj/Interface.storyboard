@@ -12,7 +12,7 @@
                     <items>
                         <button width="1" alignment="left" title="999.99" id="cF9-jl-iAI">
                             <connections>
-                                <segue destination="4VU-Us-55q" kind="push" id="JVx-tI-cft"/>
+                                <segue destination="4VU-Us-55q" kind="push" identifier="Subtotal" id="JVx-tI-cft"/>
                             </connections>
                         </button>
                         <group width="1" alignment="center" verticalAlignment="bottom" layout="vertical" id="BJk-EC-nDK">
@@ -25,8 +25,16 @@
                                 </label>
                                 <group width="1" alignment="center" verticalAlignment="bottom" spacing="4" id="Quh-c2-LS6">
                                     <items>
-                                        <picker width="0.5" height="62" alignment="left" focusStyle="sequence" id="QnM-gm-8GR"/>
-                                        <picker width="0.5" height="62" alignment="left" focusStyle="sequence" id="cK9-L3-dzZ"/>
+                                        <picker width="0.5" height="62" alignment="left" focusStyle="sequence" id="QnM-gm-8GR">
+                                            <connections>
+                                                <action selector="tipPercentageWasPicked:" destination="AgC-eL-Hgc" id="oh1-4S-hCh"/>
+                                            </connections>
+                                        </picker>
+                                        <picker width="0.5" height="62" alignment="left" focusStyle="sequence" id="cK9-L3-dzZ">
+                                            <connections>
+                                                <action selector="numberInPartyWasPicked:" destination="AgC-eL-Hgc" id="kS4-lW-4Ki"/>
+                                            </connections>
+                                        </picker>
                                     </items>
                                     <edgeInsets key="margins" left="4" right="4" top="8" bottom="0.0"/>
                                 </group>
@@ -35,6 +43,7 @@
                     </items>
                     <connections>
                         <outlet property="numberInPartyPicker" destination="cK9-L3-dzZ" id="LQe-EZ-2ty"/>
+                        <outlet property="subtotalButton" destination="cF9-jl-iAI" id="wbh-gl-YDr"/>
                         <outlet property="tipLabel" destination="qlg-RX-aGy" id="icg-ns-dnR"/>
                         <outlet property="tipPercentagePicker" destination="QnM-gm-8GR" id="xSy-8d-6Kf"/>
                         <outlet property="totalLabel" destination="R1q-Jr-aYb" id="PBF-oU-WuQ"/>

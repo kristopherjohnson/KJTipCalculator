@@ -8,11 +8,11 @@
 /// Delegate for KeypadViewModel.
 public protocol KeypadViewModelDelegate: class {
 
-    /// Invoked whenever the keypad display changes.
+    /// Invoked whenever the keypad display changes due to user input.
     func keypadViewModel(keypadViewModel: KeypadViewModel, displayTextDidChange: String)
 
     /// Invoked when the keypad rejects an
-    /// addDigit(), addPeriod(), or delete() call.
+    /// `addDigit()`, `addDecimalPoint()`, or `delete()` call.
     func keypadViewModelRejectedInput()
 }
 
@@ -29,6 +29,17 @@ public class KeypadViewModel {
 
     /// Return the current displayed value.
     public private(set) var displayText = "0"
+
+    /// Get/set the numeric value displayed by the view model.
+    public var value: Double {
+        get {
+            return Double(displayText) ?? 0.00
+        }
+        set {
+            let s = String(format: "%01.2f", newValue)
+            displayText = (s == "0.00") ? "0" : s
+        }
+    }
 
     /// Maximum number of digits before the decimal point.
     public static let wholeDigitsMaxCount = 4

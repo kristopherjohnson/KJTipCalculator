@@ -249,4 +249,28 @@ class KeypadViewModelTests: XCTestCase {
         XCTAssertEqual("4321.0", delegate.lastChange)
         XCTAssertEqual(1, delegate.rejectCount)
     }
+
+    func testValue() {
+        XCTAssertEqual(0.0, keypad.value, "Initial value should be 0.0")
+
+        keypad.value = 0.01
+        XCTAssertEqual("0.01", keypad.displayText)
+        XCTAssertEqualWithAccuracy(0.01, keypad.value, accuracy: 0.001)
+
+        keypad.value = 9999.99
+        XCTAssertEqual("9999.99", keypad.displayText)
+        XCTAssertEqualWithAccuracy(9999.99, keypad.value, accuracy: 0.001)
+
+        keypad.value = 0.00
+        XCTAssertEqual("0", keypad.displayText)
+        XCTAssertEqualWithAccuracy(0.00, keypad.value, accuracy: 0.001)
+
+        keypad.value = 1.23
+        XCTAssertEqual("1.23", keypad.displayText)
+        XCTAssertEqualWithAccuracy(1.23, keypad.value, accuracy: 0.001)
+
+        keypad.value = 4567.89
+        XCTAssertEqual("4567.89", keypad.displayText)
+        XCTAssertEqualWithAccuracy(4567.89, keypad.value, accuracy: 0.001)
+    }
 }

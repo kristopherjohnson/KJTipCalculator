@@ -6,10 +6,40 @@
 //
 
 import WatchKit
-import Foundation
 
+/// Delegate for SubtotalInterfaceController.
+protocol SubtotalInterfaceControllerDelegate: class {
 
+    /// Invoked when the value is changed by the user.
+    func subtotalInterfaceController(controller: SubtotalInterfaceController,
+                                     didUpdateSubtotal subtotal: Double)
+}
+
+/// Interface controller for the Subtotal keypad entry view.
 class SubtotalInterfaceController: WKInterfaceController {
+
+    /// Segue context.
+    class Context {
+        let subtotal: Double
+        let delegate: SubtotalInterfaceControllerDelegate
+
+        init(subtotal: Double, delegate: SubtotalInterfaceControllerDelegate) {
+            self.subtotal = subtotal
+            self.delegate = delegate
+        }
+    }
+    
+    weak var delegate: SubtotalInterfaceControllerDelegate?
+
+    /// The numeric value displayed by the Subtotal keypad view.
+    var value: Double {
+        get {
+            return viewModel.value
+        }
+        set {
+            viewModel.value = newValue
+        }
+    }
 
     @IBOutlet var subtotalLabel: WKInterfaceLabel!
     @IBOutlet var keypad0: WKInterfaceButton!
@@ -26,72 +56,85 @@ class SubtotalInterfaceController: WKInterfaceController {
     @IBOutlet var keypadDelete: WKInterfaceButton!
     @IBOutlet var keypadClear: WKInterfaceButton!
 
-    let keypadViewModel = KeypadViewModel()
+    private let viewModel = KeypadViewModel()
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
 
-        keypadViewModel.delegate = self
-        
-        subtotalLabel.setText(keypadViewModel.displayText)
-    }
+        if let context = context as? Context {
+            viewModel.value = context.subtotal
+            delegate = context.delegate
+        }
+        else {
+            NSLog("No context for SubtotalInterfaceController")
+        }
 
-    override func willActivate() {
-        // This method is called when watch view controller is about to be visible to user
-        super.willActivate()
+        viewModel.delegate = self
+        subtotalLabel.setText(viewModel.displayText)
     }
-
-    override func didDeactivate() {
-        // This method is called when watch view controller is no longer visible
-        super.didDeactivate()
-    }
+    
+    // MARK: - Button event handlers
 
     @IBAction func keypad0Tapped() {
+        viewModel.addDigit(0)
     }
 
     @IBAction func keypad1Tapped() {
+        viewModel.addDigit(1)
     }
 
     @IBAction func keypad2Tapped() {
+        viewModel.addDigit(2)
     }
 
     @IBAction func keypad3Tapped() {
+        viewModel.addDigit(3)
     }
 
     @IBAction func keypad4Tapped() {
+        viewModel.addDigit(4)
     }
 
     @IBAction func keypad5Tapped() {
+        viewModel.addDigit(5)
     }
 
     @IBAction func keypad6Tapped() {
+        viewModel.addDigit(6)
     }
 
     @IBAction func keypad7Tapped() {
+        viewModel.addDigit(7)
     }
 
     @IBAction func keypad8Tapped() {
+        viewModel.addDigit(8)
     }
 
     @IBAction func keypad9Tapped() {
+        viewModel.addDigit(9)
     }
 
     @IBAction func keypadPeriodTapped() {
+        viewModel.addDecimalPoint()
     }
 
     @IBAction func keypadDeleteTapped() {
+        viewModel.delete()
     }
 
     @IBAction func keypadClearTapped() {
+        viewModel.clear()
     }
 }
 
 extension SubtotalInterfaceController: KeypadViewModelDelegate {
     func keypadViewModel(keypadViewModel: KeypadViewModel, displayTextDidChange text: String) {
         subtotalLabel.setText(text)
+        delegate?.subtotalInterfaceController(self, didUpdateSubtotal: keypadViewModel.value)
     }
 
     func keypadViewModelRejectedInput() {
-        // TODO
+        // TODO: provide some sort of feedback
     }
 }
