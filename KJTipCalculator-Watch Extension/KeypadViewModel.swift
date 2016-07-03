@@ -6,7 +6,7 @@
 //
 
 /// Delegate for KeypadViewModel.
-public protocol KeypadViewModelDelegate: class {
+protocol KeypadViewModelDelegate: class {
 
     /// Invoked whenever the keypad display changes due to user input.
     func keypadViewModel(keypadViewModel: KeypadViewModel, displayTextDidChange: String)
@@ -22,16 +22,16 @@ public protocol KeypadViewModelDelegate: class {
 /// Allows up to four digits to the left of the
 /// decimal point, and up to two digits to the
 /// right of the decimal point.
-public class KeypadViewModel {
+final class KeypadViewModel {
 
     /// Delegate notified as the state changes.
-    public weak var delegate: KeypadViewModelDelegate? = nil
+    weak var delegate: KeypadViewModelDelegate? = nil
 
     /// Return the current displayed value.
-    public private(set) var displayText = "0"
+    private(set) var displayText = "0"
 
     /// Get/set the numeric value displayed by the view model.
-    public var value: Double {
+    var value: Double {
         get {
             return Double(displayText) ?? 0.00
         }
@@ -42,15 +42,15 @@ public class KeypadViewModel {
     }
 
     /// Maximum number of digits before the decimal point.
-    public static let wholeDigitsMaxCount = 4
+    static let wholeDigitsMaxCount = 4
 
     /// Maximum number of digits after the decimal point.
-    public static let fractionalDigitsMaxCount = 2
+    static let fractionalDigitsMaxCount = 2
 
     /// Append a digit to the end of the display.
     ///
     /// - parameter digit: A value in the range 0...9.
-    public func addDigit(digit: Int) {
+    func addDigit(digit: Int) {
         if digit < 0 || 9 < digit || !canAcceptAnotherDigit {
             notifyReject()
             return
@@ -72,7 +72,7 @@ public class KeypadViewModel {
     }
 
     /// Add a decimal point to the end of the display.
-    public func addDecimalPoint() {
+    func addDecimalPoint() {
         if hasDecimalPoint {
             notifyReject()
             return
@@ -82,7 +82,7 @@ public class KeypadViewModel {
     }
 
     /// Delete the last typed digit or period.
-    public func delete() {
+    func delete() {
         if displayText == "0" {
             notifyReject()
             return
@@ -98,7 +98,7 @@ public class KeypadViewModel {
     }
 
     /// Clear the display to "0".
-    public func clear() {
+    func clear() {
         if !(displayText == "0") {
             displayText = "0"
             notifyChange()

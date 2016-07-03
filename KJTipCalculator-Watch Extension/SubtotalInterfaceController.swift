@@ -16,7 +16,7 @@ protocol SubtotalInterfaceControllerDelegate: class {
 }
 
 /// Interface controller for the Subtotal keypad entry view.
-class SubtotalInterfaceController: WKInterfaceController {
+final class SubtotalInterfaceController: WKInterfaceController {
 
     /// Segue context.
     class Context {

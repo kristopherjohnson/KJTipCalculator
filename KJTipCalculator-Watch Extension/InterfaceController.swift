@@ -6,10 +6,8 @@
 //
 
 import WatchKit
-import Foundation
 
-
-class InterfaceController: WKInterfaceController {
+final class InterfaceController: WKInterfaceController {
 
     @IBOutlet var subtotalButton: WKInterfaceButton!
     @IBOutlet var tipPercentagePicker: WKInterfacePicker!
@@ -23,22 +21,15 @@ class InterfaceController: WKInterfaceController {
 
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
-        
-        // Configure interface objects here.
-        let tipPercentageItems: [WKPickerItem] = (1...50).map { n in
-            let item = WKPickerItem()
-            item.title = "\(n)%"
-            item.caption = "Tip %"
-            return item
+
+        let tipPercentageItems: [WKPickerItem] = (1...50).map {
+            return pickerItem(title: "\($0)%", caption: "Tip %")
         }
         tipPercentagePicker.setItems(tipPercentageItems)
         tipPercentagePicker.setSelectedItemIndex(tipPercentage - 1)
 
-        let numberInPartyItems: [WKPickerItem] = (1...20).map { n in
-            let item = WKPickerItem()
-            item.title = "\(n)"
-            item.caption = "Party of"
-            return item
+        let numberInPartyItems: [WKPickerItem] = (1...20).map {
+            return pickerItem(title: "\($0)", caption: "Party of")
         }
         numberInPartyPicker.setItems(numberInPartyItems)
         numberInPartyPicker.setSelectedItemIndex(numberInParty - 1)
@@ -85,6 +76,13 @@ class InterfaceController: WKInterfaceController {
     @IBAction func numberInPartyWasPicked(value: Int) {
         numberInParty = value + 1
         updateOutput()
+    }
+
+    private func pickerItem(title title: String, caption: String) -> WKPickerItem {
+        let item = WKPickerItem()
+        item.title = title
+        item.caption = caption
+        return item
     }
 
     private func formatValue(value: Double) -> String {
