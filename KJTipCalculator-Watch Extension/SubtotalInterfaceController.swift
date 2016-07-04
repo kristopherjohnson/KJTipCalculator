@@ -76,65 +76,105 @@ final class SubtotalInterfaceController: WKInterfaceController {
     // MARK: - Button event handlers
 
     @IBAction func keypad0Tapped() {
+        animateButtonTap(keypad0)
         viewModel.addDigit(0)
     }
 
     @IBAction func keypad1Tapped() {
+        animateButtonTap(keypad1)
         viewModel.addDigit(1)
     }
 
     @IBAction func keypad2Tapped() {
+        animateButtonTap(keypad2)
         viewModel.addDigit(2)
     }
 
     @IBAction func keypad3Tapped() {
+        animateButtonTap(keypad3)
         viewModel.addDigit(3)
     }
 
     @IBAction func keypad4Tapped() {
+        animateButtonTap(keypad4)
         viewModel.addDigit(4)
     }
 
     @IBAction func keypad5Tapped() {
+        animateButtonTap(keypad5)
         viewModel.addDigit(5)
     }
 
     @IBAction func keypad6Tapped() {
+        animateButtonTap(keypad6)
         viewModel.addDigit(6)
     }
 
     @IBAction func keypad7Tapped() {
+        animateButtonTap(keypad7)
         viewModel.addDigit(7)
     }
 
     @IBAction func keypad8Tapped() {
+        animateButtonTap(keypad8)
         viewModel.addDigit(8)
     }
 
     @IBAction func keypad9Tapped() {
+        animateButtonTap(keypad9)
         viewModel.addDigit(9)
     }
 
     @IBAction func keypadPeriodTapped() {
+        animateButtonTap(keypadPeriod)
         viewModel.addDecimalPoint()
     }
 
     @IBAction func keypadDeleteTapped() {
+        animateButtonTap(keypadDelete)
         viewModel.delete()
     }
 
     @IBAction func keypadClearTapped() {
+        animateButtonTap(keypadClear)
         viewModel.clear()
+    }
+
+    private func animateButtonTap(button: WKInterfaceButton) {
+        animateWithDuration(0.1) {
+            button.setBackgroundColor(UIColor.grayColor())
+        }
+
+        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * 1e9))
+        dispatch_after(delay, dispatch_get_main_queue()) {
+            self.animateWithDuration(0.1) {
+                button.setBackgroundColor(nil)
+            }
+        }
+    }
+
+    private func animateButtonRejection() {
+        animateWithDuration(0.1) {
+            self.subtotalLabel.setTextColor(UIColor.redColor())
+        }
+
+        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * 1e9))
+        dispatch_after(delay, dispatch_get_main_queue()) {
+            self.animateWithDuration(0.1) {
+                self.subtotalLabel.setTextColor(UIColor.whiteColor())
+            }
+        }
     }
 }
 
 extension SubtotalInterfaceController: KeypadViewModelDelegate {
     func keypadViewModel(keypadViewModel: KeypadViewModel, displayTextDidChange text: String) {
         subtotalLabel.setText(text)
-        delegate?.subtotalInterfaceController(self, didUpdateSubtotal: keypadViewModel.value)
+        let value = keypadViewModel.value
+        delegate?.subtotalInterfaceController(self, didUpdateSubtotal: value)
     }
 
     func keypadViewModelRejectedInput() {
-        // TODO: provide some sort of feedback
+        animateButtonRejection()
     }
 }
