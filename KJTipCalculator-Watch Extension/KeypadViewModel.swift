@@ -35,9 +35,15 @@ final class KeypadViewModel {
         get {
             return Double(displayText) ?? 0.00
         }
+
         set {
-            let s = String(format: "%01.2f", newValue)
-            displayText = (s == "0.00") ? "0" : s
+            let textWithDecimalPoint = String(format: "%01.2f", newValue)
+            if textWithDecimalPoint.hasSuffix(".00") {
+                displayText = String(format: "%d", Int(newValue))
+            }
+            else {
+                displayText = textWithDecimalPoint
+            }
         }
     }
 

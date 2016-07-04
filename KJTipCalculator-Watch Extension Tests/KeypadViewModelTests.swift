@@ -262,7 +262,8 @@ class KeypadViewModelTests: XCTestCase {
         XCTAssertEqualWithAccuracy(9999.99, keypad.value, accuracy: 0.001)
 
         keypad.value = 0.00
-        XCTAssertEqual("0", keypad.displayText)
+        XCTAssertEqual("0", keypad.displayText,
+                       "Zero should be displayed as just '0'")
         XCTAssertEqualWithAccuracy(0.00, keypad.value, accuracy: 0.001)
 
         keypad.value = 1.23
@@ -272,5 +273,10 @@ class KeypadViewModelTests: XCTestCase {
         keypad.value = 4567.89
         XCTAssertEqual("4567.89", keypad.displayText)
         XCTAssertEqualWithAccuracy(4567.89, keypad.value, accuracy: 0.001)
+
+        keypad.value = 12.00
+        XCTAssertEqual("12", keypad.displayText,
+                       "Whole values should not be displayed with decimal point")
+        XCTAssertEqualWithAccuracy(12.0, keypad.value, accuracy: 0.001)
     }
 }
