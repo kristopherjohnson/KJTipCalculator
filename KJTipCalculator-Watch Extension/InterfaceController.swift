@@ -9,6 +9,7 @@ import WatchKit
 
 final class InterfaceController: WKInterfaceController {
 
+    @IBOutlet var subtotalLabel: WKInterfaceLabel!
     @IBOutlet var subtotalButton: WKInterfaceButton!
     @IBOutlet var tipPercentagePicker: WKInterfacePicker!
     @IBOutlet var numberInPartyPicker: WKInterfacePicker!
@@ -22,6 +23,8 @@ final class InterfaceController: WKInterfaceController {
     override func awakeWithContext(context: AnyObject?) {
         super.awakeWithContext(context)
 
+        subtotalButton.setBackgroundColor(appTintColor)
+        
         let tipPercentageItems: [WKPickerItem] = (1...50).map {
             return pickerItem(title: "\($0)%", caption: "Tip %")
         }
@@ -48,7 +51,7 @@ final class InterfaceController: WKInterfaceController {
         let tipCalculation = TipCalculation(subtotal: subtotal,
                                             tipPercentage: tipPercentage,
                                             numberInParty: numberInParty)
-        subtotalButton.setTitle(formatValue(subtotal))
+        subtotalLabel.setText(formatValue(subtotal))
         tipLabel.setText("Tip: \(formatValue(tipCalculation.tip))")
         if numberInParty == 1 {
             totalLabel.setText("Total: \(formatValue(tipCalculation.total))")

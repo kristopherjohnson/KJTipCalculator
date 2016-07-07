@@ -10,7 +10,7 @@
             <objects>
                 <controller identifier="main" title="KJTipCalc" id="AgC-eL-Hgc" customClass="InterfaceController" customModule="KJTipCalculator_Watch" customModuleProvider="target">
                     <items>
-                        <group width="1" height="0.40000000000000002" alignment="center" id="Quh-c2-LS6">
+                        <group width="1" height="0.29999999999999999" alignment="center" id="Quh-c2-LS6">
                             <items>
                                 <picker width="0.5" height="1" alignment="left" focusStyle="sequence" id="QnM-gm-8GR">
                                     <connections>
@@ -23,16 +23,25 @@
                                     </connections>
                                 </picker>
                             </items>
+                            <edgeInsets key="margins" left="0.0" right="0.0" top="0.0" bottom="0.0"/>
                         </group>
-                        <group width="1" height="0.29999999999999999" alignment="left" id="cXb-Pj-P1K">
-                            <items>
-                                <button width="1" alignment="center" verticalAlignment="center" title="999.99" id="cF9-jl-iAI">
-                                    <connections>
-                                        <segue destination="4VU-Us-55q" kind="push" identifier="Subtotal" id="JVx-tI-cft"/>
-                                    </connections>
-                                </button>
-                            </items>
-                        </group>
+                        <button alignment="center" verticalAlignment="center" id="cF9-jl-iAI">
+                            <group key="contentGroup" width="1" alignment="left" layout="vertical" id="oVR-S2-9RZ">
+                                <items>
+                                    <label alignment="left" text="Subtotal" id="AQN-yc-QMj">
+                                        <fontDescription key="font" style="UICTFontTextStyleCaption2"/>
+                                    </label>
+                                    <label alignment="center" verticalAlignment="center" text="9999.99" id="V3w-XJ-6Jw">
+                                        <fontDescription key="font" style="UICTFontTextStyleHeadline"/>
+                                    </label>
+                                </items>
+                                <color key="backgroundColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <edgeInsets key="margins" left="4" right="4" top="4" bottom="4"/>
+                            </group>
+                            <connections>
+                                <segue destination="4VU-Us-55q" kind="push" identifier="Subtotal" id="JVx-tI-cft"/>
+                            </connections>
+                        </button>
                         <group width="1" height="0.29999999999999999" alignment="center" verticalAlignment="bottom" layout="vertical" id="BJk-EC-nDK">
                             <items>
                                 <label width="136" alignment="center" verticalAlignment="bottom" text="Tip: 999.99" textAlignment="center" id="qlg-RX-aGy">
@@ -47,6 +56,7 @@
                     <connections>
                         <outlet property="numberInPartyPicker" destination="cK9-L3-dzZ" id="LQe-EZ-2ty"/>
                         <outlet property="subtotalButton" destination="cF9-jl-iAI" id="wbh-gl-YDr"/>
+                        <outlet property="subtotalLabel" destination="V3w-XJ-6Jw" id="GWV-1i-X0A"/>
                         <outlet property="tipLabel" destination="qlg-RX-aGy" id="icg-ns-dnR"/>
                         <outlet property="tipPercentagePicker" destination="QnM-gm-8GR" id="xSy-8d-6Kf"/>
                         <outlet property="totalLabel" destination="R1q-Jr-aYb" id="PBF-oU-WuQ"/>

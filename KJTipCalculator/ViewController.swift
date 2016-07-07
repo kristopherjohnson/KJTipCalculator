@@ -42,8 +42,6 @@ class ViewController: UIViewController {
     
     let currencyFormat: NSString = "%.2f"
     
-    let appTintColor = UIColor(red: 1.0, green: 0.0, blue: 0.8, alpha: 1.0)
-
     let minTipPercentage     = 1
     let defaultTipPercentage = 20
     let maxTipPercentage     = 99

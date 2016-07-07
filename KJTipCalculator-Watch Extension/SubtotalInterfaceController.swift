@@ -142,7 +142,7 @@ final class SubtotalInterfaceController: WKInterfaceController {
 
     private func animateButtonTap(button: WKInterfaceButton) {
         animateWithDuration(0.1) {
-            button.setBackgroundColor(UIColor.grayColor())
+            button.setBackgroundColor(appTintColor)
         }
 
         let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * 1e9))
