@@ -141,28 +141,16 @@ final class SubtotalInterfaceController: WKInterfaceController {
     }
 
     private func animateButtonTap(button: WKInterfaceButton) {
-        animateWithDuration(0.1) {
-            button.setBackgroundColor(appTintColor)
-        }
-
-        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * 1e9))
-        dispatch_after(delay, dispatch_get_main_queue()) {
-            self.animateWithDuration(0.1) {
-                button.setBackgroundColor(nil)
-            }
+        button.setBackgroundColor(appTintColor)
+        animateWithDuration(0.2) {
+            button.setBackgroundColor(nil)
         }
     }
 
     private func animateButtonRejection() {
+        subtotalLabel.setTextColor(UIColor.redColor())
         animateWithDuration(0.1) {
-            self.subtotalLabel.setTextColor(UIColor.redColor())
-        }
-
-        let delay = dispatch_time(DISPATCH_TIME_NOW, Int64(0.1 * 1e9))
-        dispatch_after(delay, dispatch_get_main_queue()) {
-            self.animateWithDuration(0.1) {
-                self.subtotalLabel.setTextColor(UIColor.whiteColor())
-            }
+            self.subtotalLabel.setTextColor(UIColor.whiteColor())
         }
     }
 }
