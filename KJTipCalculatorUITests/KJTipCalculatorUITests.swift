@@ -46,11 +46,11 @@ class KJTipCalculatorUITests: XCTestCase {
 
         let clearButton = app.buttons["Clear"]
 
-        let percentageStepper = app.steppers.elementBoundByIndex(0)
+        let percentageStepper = app.steppers.element(boundBy: 0)
         let percentageDecrementButton = percentageStepper.buttons["Decrement"]
         let percentageIncrementButton = percentageStepper.buttons["Increment"]
 
-        let numberInPartyStepper = app.steppers.elementBoundByIndex(1)
+        let numberInPartyStepper = app.steppers.element(boundBy: 1)
         let numberInPartyDecrementButton = numberInPartyStepper.buttons["Decrement"]
         let numberInPartyIncrementButton = numberInPartyStepper.buttons["Increment"]
 

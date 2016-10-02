@@ -16,12 +16,12 @@ final class InterfaceController: WKInterfaceController {
     @IBOutlet var tipLabel: WKInterfaceLabel!
     @IBOutlet var totalLabel: WKInterfaceLabel!
 
-    private var subtotal = 20.00
-    private var tipPercentage = 18
-    private var numberInParty = 1
+    fileprivate var subtotal = 20.00
+    fileprivate var tipPercentage = 18
+    fileprivate var numberInParty = 1
 
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
 
         subtotalButton.setBackgroundColor(appTintColor)
         
@@ -61,7 +61,7 @@ final class InterfaceController: WKInterfaceController {
         }
     }
 
-    override func contextForSegueWithIdentifier(segueIdentifier: String) -> AnyObject? {
+    override func contextForSegue(withIdentifier segueIdentifier: String) -> Any? {
         switch segueIdentifier {
         case "Subtotal":
             return SubtotalInterfaceController.Context(subtotal: subtotal, delegate: self)
@@ -71,30 +71,30 @@ final class InterfaceController: WKInterfaceController {
         }
     }
 
-    @IBAction func tipPercentageWasPicked(value: Int) {
+    @IBAction func tipPercentageWasPicked(_ value: Int) {
         tipPercentage = value + 1
         updateOutput()
     }
 
-    @IBAction func numberInPartyWasPicked(value: Int) {
+    @IBAction func numberInPartyWasPicked(_ value: Int) {
         numberInParty = value + 1
         updateOutput()
     }
 
-    private func pickerItem(title title: String, caption: String) -> WKPickerItem {
+    fileprivate func pickerItem(title: String, caption: String) -> WKPickerItem {
         let item = WKPickerItem()
         item.title = title
         item.caption = caption
         return item
     }
 
-    private func formatValue(value: Double) -> String {
+    fileprivate func formatValue(_ value: Double) -> String {
         return String(format: "%01.2f", value)
     }
 }
 
 extension InterfaceController: SubtotalInterfaceControllerDelegate {
-    func subtotalInterfaceController(controller: SubtotalInterfaceController, didUpdateSubtotal subtotal: Double) {
+    func subtotalInterfaceController(_ controller: SubtotalInterfaceController, didUpdateSubtotal subtotal: Double) {
         self.subtotal = subtotal
         updateOutput()
     }

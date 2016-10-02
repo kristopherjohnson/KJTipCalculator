@@ -46,7 +46,7 @@ class NumericTextFieldDelegateTests: XCTestCase {
     func testAllowAdditionOfNumericCharacters() {
         textField.text = ""
         let allowed = delegate.textField(textField,
-            shouldChangeCharactersInRange: NSRange(location: 0, length: 0),
+            shouldChangeCharactersIn: NSRange(location: 0, length: 0),
             replacementString: "12345")
         XCTAssertTrue(allowed)
     }
@@ -54,7 +54,7 @@ class NumericTextFieldDelegateTests: XCTestCase {
     func testDisallowAdditionOfTooManyNumericCharacters() {
         textField.text = ""
         let allowed = delegate.textField(textField,
-            shouldChangeCharactersInRange: NSRange(location:0, length: 0),
+            shouldChangeCharactersIn: NSRange(location:0, length: 0),
             replacementString: "123456")
         XCTAssertFalse(allowed, "should allow no more than 5 characters")
     }
@@ -62,7 +62,7 @@ class NumericTextFieldDelegateTests: XCTestCase {
     func testDisallowAdditionOfNonnumericCharacters() {
         textField.text = ""
         let allowed = delegate.textField(textField,
-            shouldChangeCharactersInRange: NSRange(location:0, length: 0),
+            shouldChangeCharactersIn: NSRange(location:0, length: 0),
             replacementString: "z")
         XCTAssertFalse(allowed, "should not allow non-numeric characters")
     }
@@ -70,7 +70,7 @@ class NumericTextFieldDelegateTests: XCTestCase {
     func testAllowDeletionOfAllCharacters() {
         textField.text = "1"
         let allowed = delegate.textField(textField,
-            shouldChangeCharactersInRange: NSRange(location:0, length: 1),
+            shouldChangeCharactersIn: NSRange(location:0, length: 1),
             replacementString: "")
         XCTAssertTrue(allowed, "should allow all characters to be deleted")
     }

@@ -19,7 +19,7 @@ class KeypadViewModelTests: XCTestCase {
 
         var lastChange: String? { return displayChanges.last }
 
-        func keypadViewModel(keypadViewModel: KeypadViewModel, displayTextDidChange newText: String) {
+        func keypadViewModel(_ keypadViewModel: KeypadViewModel, displayTextDidChange newText: String) {
             displayChanges.append(newText)
         }
 

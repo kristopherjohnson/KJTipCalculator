@@ -9,7 +9,7 @@
 protocol KeypadViewModelDelegate: class {
 
     /// Invoked whenever the keypad display changes due to user input.
-    func keypadViewModel(keypadViewModel: KeypadViewModel, displayTextDidChange: String)
+    func keypadViewModel(_ keypadViewModel: KeypadViewModel, displayTextDidChange: String)
 
     /// Invoked when the keypad rejects an
     /// `addDigit()`, `addDecimalPoint()`, or `delete()` call.
@@ -28,7 +28,7 @@ final class KeypadViewModel {
     weak var delegate: KeypadViewModelDelegate? = nil
 
     /// Return the current displayed value.
-    private(set) var displayText = "0"
+    fileprivate(set) var displayText = "0"
 
     /// Get/set the numeric value displayed by the view model.
     var value: Double {
@@ -56,7 +56,7 @@ final class KeypadViewModel {
     /// Append a digit to the end of the display.
     ///
     /// - parameter digit: A value in the range 0...9.
-    func addDigit(digit: Int) {
+    func addDigit(_ digit: Int) {
         if digit < 0 || 9 < digit || !canAcceptAnotherDigit {
             notifyReject()
             return
@@ -72,8 +72,8 @@ final class KeypadViewModel {
         }
 
         let digitUnicodeScalar = UnicodeScalar(
-            KeypadViewModel.zeroUnicodeScalar + UInt32(digit))
-        displayText.append(digitUnicodeScalar)
+            KeypadViewModel.zeroUnicodeScalar + UInt32(digit))!
+        displayText.append(Character(digitUnicodeScalar))
         notifyChange()
     }
 
@@ -98,7 +98,7 @@ final class KeypadViewModel {
             displayText = "0"
         }
         else {
-            displayText.removeAtIndex(displayText.endIndex.predecessor())
+            displayText.remove(at: displayText.characters.index(before: displayText.endIndex))
         }
         notifyChange()
     }
@@ -113,9 +113,9 @@ final class KeypadViewModel {
 
     // MARK: - Private
 
-    private static let zeroUnicodeScalar = UnicodeScalar("0").value
+    fileprivate static let zeroUnicodeScalar = UnicodeScalar("0").value
 
-    private var canAcceptAnotherDigit: Bool {
+    fileprivate var canAcceptAnotherDigit: Bool {
         if hasDecimalPoint {
             return rightOfDecimalPointDigitCount < KeypadViewModel.fractionalDigitsMaxCount
         }
@@ -124,25 +124,26 @@ final class KeypadViewModel {
         }
     }
 
-    private var hasDecimalPoint: Bool {
-        return displayText.containsString(".")
+    fileprivate var hasDecimalPoint: Bool {
+        return displayText.contains(".")
     }
 
-    private var rightOfDecimalPointDigitCount: Int {
+    fileprivate var rightOfDecimalPointDigitCount: Int {
         let chars = displayText.characters
-        if let decimalPointIndex = chars.indexOf(Character(".")) {
-            return decimalPointIndex.successor().distanceTo(chars.endIndex)
+        if let decimalPointIndex = chars.index(of: Character(".")) {
+            let nextIndex = chars.index(after: decimalPointIndex)
+            return chars.distance(from: nextIndex, to: chars.endIndex)
         }
         else {
             return 0
         }
     }
 
-    private func notifyChange() {
+    fileprivate func notifyChange() {
         delegate?.keypadViewModel(self, displayTextDidChange: displayText)
     }
 
-    private func notifyReject() {
+    fileprivate func notifyReject() {
         delegate?.keypadViewModelRejectedInput()
     }
 }

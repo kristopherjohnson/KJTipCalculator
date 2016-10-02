@@ -11,7 +11,7 @@ import WatchKit
 protocol SubtotalInterfaceControllerDelegate: class {
 
     /// Invoked when the value is changed by the user.
-    func subtotalInterfaceController(controller: SubtotalInterfaceController,
+    func subtotalInterfaceController(_ controller: SubtotalInterfaceController,
                                      didUpdateSubtotal subtotal: Double)
 }
 
@@ -56,10 +56,10 @@ final class SubtotalInterfaceController: WKInterfaceController {
     @IBOutlet var keypadDelete: WKInterfaceButton!
     @IBOutlet var keypadClear: WKInterfaceButton!
 
-    private let viewModel = KeypadViewModel()
+    fileprivate let viewModel = KeypadViewModel()
 
-    override func awakeWithContext(context: AnyObject?) {
-        super.awakeWithContext(context)
+    override func awake(withContext context: Any?) {
+        super.awake(withContext: context)
 
         if let context = context as? Context {
             viewModel.value = context.subtotal
@@ -140,23 +140,23 @@ final class SubtotalInterfaceController: WKInterfaceController {
         viewModel.clear()
     }
 
-    private func animateButtonTap(button: WKInterfaceButton) {
+    fileprivate func animateButtonTap(_ button: WKInterfaceButton) {
         button.setBackgroundColor(appTintColor)
-        animateWithDuration(0.2) {
+        animate(withDuration: 0.2) {
             button.setBackgroundColor(nil)
         }
     }
 
-    private func animateButtonRejection() {
-        subtotalLabel.setTextColor(UIColor.redColor())
-        animateWithDuration(0.1) {
-            self.subtotalLabel.setTextColor(UIColor.whiteColor())
+    fileprivate func animateButtonRejection() {
+        subtotalLabel.setTextColor(UIColor.red)
+        animate(withDuration: 0.1) {
+            self.subtotalLabel.setTextColor(UIColor.white)
         }
     }
 }
 
 extension SubtotalInterfaceController: KeypadViewModelDelegate {
-    func keypadViewModel(keypadViewModel: KeypadViewModel, displayTextDidChange text: String) {
+    func keypadViewModel(_ keypadViewModel: KeypadViewModel, displayTextDidChange text: String) {
         subtotalLabel.setText(text)
         let value = keypadViewModel.value
         delegate?.subtotalInterfaceController(self, didUpdateSubtotal: value)
