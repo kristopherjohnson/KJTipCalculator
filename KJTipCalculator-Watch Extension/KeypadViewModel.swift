@@ -28,7 +28,7 @@ final class KeypadViewModel {
     weak var delegate: KeypadViewModelDelegate? = nil
 
     /// Return the current displayed value.
-    fileprivate(set) var displayText = "0"
+    private(set) var displayText = "0"
 
     /// Get/set the numeric value displayed by the view model.
     var value: Double {
@@ -113,9 +113,9 @@ final class KeypadViewModel {
 
     // MARK: - Private
 
-    fileprivate static let zeroUnicodeScalar = UnicodeScalar("0").value
+    private static let zeroUnicodeScalar = UnicodeScalar("0").value
 
-    fileprivate var canAcceptAnotherDigit: Bool {
+    private var canAcceptAnotherDigit: Bool {
         if hasDecimalPoint {
             return rightOfDecimalPointDigitCount < KeypadViewModel.fractionalDigitsMaxCount
         }
@@ -124,11 +124,11 @@ final class KeypadViewModel {
         }
     }
 
-    fileprivate var hasDecimalPoint: Bool {
+    private var hasDecimalPoint: Bool {
         return displayText.contains(".")
     }
 
-    fileprivate var rightOfDecimalPointDigitCount: Int {
+    private var rightOfDecimalPointDigitCount: Int {
         let chars = displayText.characters
         if let decimalPointIndex = chars.index(of: Character(".")) {
             let nextIndex = chars.index(after: decimalPointIndex)
@@ -139,11 +139,11 @@ final class KeypadViewModel {
         }
     }
 
-    fileprivate func notifyChange() {
+    private func notifyChange() {
         delegate?.keypadViewModel(self, displayTextDidChange: displayText)
     }
 
-    fileprivate func notifyReject() {
+    private func notifyReject() {
         delegate?.keypadViewModelRejectedInput()
     }
 }

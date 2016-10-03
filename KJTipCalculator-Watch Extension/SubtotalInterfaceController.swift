@@ -56,7 +56,7 @@ final class SubtotalInterfaceController: WKInterfaceController {
     @IBOutlet var keypadDelete: WKInterfaceButton!
     @IBOutlet var keypadClear: WKInterfaceButton!
 
-    fileprivate let viewModel = KeypadViewModel()
+    private let viewModel = KeypadViewModel()
 
     override func awake(withContext context: Any?) {
         super.awake(withContext: context)
@@ -140,7 +140,7 @@ final class SubtotalInterfaceController: WKInterfaceController {
         viewModel.clear()
     }
 
-    fileprivate func animateButtonTap(_ button: WKInterfaceButton) {
+    private func animateButtonTap(_ button: WKInterfaceButton) {
         button.setBackgroundColor(appTintColor)
         animate(withDuration: 0.2) {
             button.setBackgroundColor(nil)

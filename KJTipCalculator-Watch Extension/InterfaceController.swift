@@ -81,14 +81,14 @@ final class InterfaceController: WKInterfaceController {
         updateOutput()
     }
 
-    fileprivate func pickerItem(title: String, caption: String) -> WKPickerItem {
+    private func pickerItem(title: String, caption: String) -> WKPickerItem {
         let item = WKPickerItem()
         item.title = title
         item.caption = caption
         return item
     }
 
-    fileprivate func formatValue(_ value: Double) -> String {
+    private func formatValue(_ value: Double) -> String {
         return String(format: "%01.2f", value)
     }
 }
