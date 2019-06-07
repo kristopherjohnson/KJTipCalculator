@@ -42,7 +42,7 @@ open class NumericTextFieldDelegate: NSObject, UITextFieldDelegate {
         let originalText = (textField.text ?? "") as NSString
         let proposedText = originalText.replacingCharacters(in: range, with: string)
         
-        let proposedLength = proposedText.characters.count
+        let proposedLength = proposedText.count
         if proposedLength > maxLength {
             return false
         }

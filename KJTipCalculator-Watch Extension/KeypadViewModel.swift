@@ -94,11 +94,11 @@ final class KeypadViewModel {
             return
         }
 
-        if displayText.characters.count == 1 {
+        if displayText.count == 1 {
             displayText = "0"
         }
         else {
-            displayText.remove(at: displayText.characters.index(before: displayText.endIndex))
+            displayText.remove(at: displayText.index(before: displayText.endIndex))
         }
         notifyChange()
     }
@@ -120,7 +120,7 @@ final class KeypadViewModel {
             return rightOfDecimalPointDigitCount < KeypadViewModel.fractionalDigitsMaxCount
         }
         else {
-            return displayText.characters.count < KeypadViewModel.wholeDigitsMaxCount
+            return displayText.count < KeypadViewModel.wholeDigitsMaxCount
         }
     }
 
@@ -129,7 +129,7 @@ final class KeypadViewModel {
     }
 
     private var rightOfDecimalPointDigitCount: Int {
-        let chars = displayText.characters
+        let chars = displayText
         if let decimalPointIndex = chars.index(of: Character(".")) {
             let nextIndex = chars.index(after: decimalPointIndex)
             return chars.distance(from: nextIndex, to: chars.endIndex)
