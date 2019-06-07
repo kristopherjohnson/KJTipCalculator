@@ -39,19 +39,17 @@ extension UIStepper {
 
 // Main view controller
 class ViewController: UIViewController {
-    
+
     let currencyFormat: NSString = "%.2f"
-    
-    let appTintColor = UIColor(red: 1.0, green: 0.0, blue: 0.8, alpha: 1.0)
 
     let minTipPercentage     = 1
     let defaultTipPercentage = 20
     let maxTipPercentage     = 99
-    
+
     let minNumberInParty     = 1
     let defaultNumberInParty = 1
     let maxNumberInParty     = 99
-    
+
     @IBOutlet var subtotalTextField      : UITextField!
     @IBOutlet var tipPercentageTextField : UITextField!
     @IBOutlet var tipPercentageStepper   : UIStepper!
@@ -60,105 +58,106 @@ class ViewController: UIViewController {
     @IBOutlet var tipOutput              : UILabel!
     @IBOutlet var totalOutput            : UILabel!
     @IBOutlet var splitOutput            : UILabel!
-    
+
     var integerTextFieldDelegate = NumericTextFieldDelegate(maxLength: 2)
     var subtotalTextFieldDelegate = NumericTextFieldDelegate(maxLength: 7, allowDecimal: true)
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         subtotalTextField.text = ""
         subtotalTextField.delegate = subtotalTextFieldDelegate
-        
-        tipPercentageTextField.setTextNumericValue(defaultTipPercentage)
+
+        tipPercentageTextField.setTextNumericValue(NSNumber(value: defaultTipPercentage))
         tipPercentageTextField.delegate = integerTextFieldDelegate
-        
+
         tipPercentageStepper.minimumValue = Double(minTipPercentage)
         tipPercentageStepper.maximumValue = Double(maxTipPercentage)
         tipPercentageStepper.value = Double(defaultTipPercentage)
-        tipPercentageStepper.incrementImage(for: UIControlState())?.accessibilityLabel = "Increase tip percentage"
-        tipPercentageStepper.decrementImage(for: UIControlState())?.accessibilityLabel = "Decrease tip percentage"
-        
-        numberInPartyTextField.setTextNumericValue(defaultNumberInParty)
+
+        tipPercentageStepper.incrementImage(for: .normal)?.accessibilityLabel = "Increase tip percentage"
+        tipPercentageStepper.decrementImage(for: .normal)?.accessibilityLabel = "Decrease tip percentage"
+
+        numberInPartyTextField.setTextNumericValue(NSNumber(value: defaultNumberInParty))
         numberInPartyTextField.delegate = integerTextFieldDelegate
-        
+
         numberInPartyStepper.minimumValue = Double(minNumberInParty)
         numberInPartyStepper.maximumValue = Double(maxNumberInParty)
         numberInPartyStepper.value = Double(defaultNumberInParty)
-        numberInPartyStepper.incrementImage(for: UIControlState())?.accessibilityLabel = "Increase number in party"
-        numberInPartyStepper.decrementImage(for: UIControlState())?.accessibilityLabel = "Decrease number in party"
+        numberInPartyStepper.incrementImage(for: .normal)?.accessibilityLabel = "Increase number in party"
+        numberInPartyStepper.decrementImage(for: .normal)?.accessibilityLabel = "Decrease number in party"
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         view.tintColor = appTintColor
         updateOutput()
         subtotalTextField.becomeFirstResponder()
     }
-    
+
     @IBAction func clearButtonWasTapped(_ sender: UIButton) {
         subtotalTextField.text = ""
         subtotalTextField.becomeFirstResponder()
         updateOutput()
     }
-    
+
     @IBAction func subtotalTextFieldChanged(_ sender: UITextField) {
         updateOutput()
     }
-    
+
     @IBAction func tipPercentageTextFieldChanged(_ sender: UITextField) {
         if let value = sender.textIntegerValue() {
-            tipPercentageStepper.ifInRangeSetValue(value)
+            let _ = tipPercentageStepper.ifInRangeSetValue(NSNumber(value: value))
         }
         updateOutput()
     }
-    
+
     @IBAction func tipPercentageStepperValueChanged(_ sender: UIStepper) {
-        tipPercentageTextField.setTextNumericValue(sender.value)
+        tipPercentageTextField.setTextNumericValue(NSNumber(value: sender.value))
         updateOutput()
     }
 
     @IBAction func numberInPartyTextFieldChanged(_ sender: UITextField) {
         if let value = sender.textIntegerValue() {
-            numberInPartyStepper.ifInRangeSetValue(value)
+            let _ = numberInPartyStepper.ifInRangeSetValue(NSNumber(value: value))
         }
         updateOutput()
     }
-    
+
     @IBAction func numberInPartyStepperValueChanged(_ sender: UIStepper) {
-        numberInPartyTextField.setTextNumericValue(sender.value)
+        numberInPartyTextField.setTextNumericValue(NSNumber(value: sender.value))
         updateOutput()
     }
 
     func updateOutput() {
         // If all text fields have valid values, then we can calculate results.
         // Otherwise, set result fields empty.
-        
+
         switch (subtotalTextField.textDoubleValue(),
             tipPercentageTextField.textIntegerValue(),
             numberInPartyTextField.textIntegerValue()) {
-            
+
         case let (.some(subtotal), .some(tipPercentage), .some(numberInParty))
             where subtotal > 0 && tipPercentage > 0 && numberInParty > 0:
-            
+
             let calc = TipCalculation(
                 subtotal: subtotal,
                 tipPercentage: tipPercentage,
                 numberInParty: numberInParty)
-            
+
             setTextForField(tipOutput,   currencyValue: calc.tip)
             setTextForField(totalOutput, currencyValue: calc.total)
             setTextForField(splitOutput, currencyValue: calc.perPerson)
-            
+
         default:
             tipOutput.text = ""
             totalOutput.text = ""
             splitOutput.text = ""
         }
     }
-    
+
     func setTextForField(_ field: TextSettable, currencyValue: Double) {
-        field.setTextNumericValue(currencyValue, format: currencyFormat)
+        field.setTextNumericValue(NSNumber(value: currencyValue), format: currencyFormat)
     }
 }
 
