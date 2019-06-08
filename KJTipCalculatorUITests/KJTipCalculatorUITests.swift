@@ -65,12 +65,12 @@ class KJTipCalculatorUITests: XCTestCase {
         XCTAssert(numberInPartyStepper.exists)
 
         // Initial values
-        XCTAssertEqual("", priceTextField.value as? String)
+        XCTAssertEqual("Price", priceTextField.value as? String)
         XCTAssertEqual("20", percentageTextField.value as? String)
         XCTAssertEqual("1", numberInPartyTextField.value as? String)
-        XCTAssertEqual("", tipOutputText.value as? String)
-        XCTAssertEqual("", totalOutputText.value as? String)
-        XCTAssertEqual("", perPersonOutputText.value as? String)
+        XCTAssertEqual(" ", tipOutputText.value as? String)
+        XCTAssertEqual(" ", totalOutputText.value as? String)
+        XCTAssertEqual(" ", perPersonOutputText.value as? String)
 
         // Enter a subtotal
         priceTextField.typeText("12.34")
@@ -106,12 +106,12 @@ class KJTipCalculatorUITests: XCTestCase {
 
         // Clear subtotal (leaves percentage and number in party as-is)
         clearButton.tap()
-        XCTAssertEqual("", priceTextField.value as? String)
+        XCTAssertEqual("Price", priceTextField.value as? String)
         XCTAssertEqual("19", percentageTextField.value as? String)
         XCTAssertEqual("2", numberInPartyTextField.value as? String)
-        XCTAssertEqual("", tipOutputText.value as? String)
-        XCTAssertEqual("", totalOutputText.value as? String)
-        XCTAssertEqual("", perPersonOutputText.value as? String)
+        XCTAssertEqual(" ", tipOutputText.value as? String)
+        XCTAssertEqual(" ", totalOutputText.value as? String)
+        XCTAssertEqual(" ", perPersonOutputText.value as? String)
 
         // Enter a new subtotal
         priceTextField.typeText("43.21")

@@ -130,7 +130,7 @@ final class KeypadViewModel {
 
     private var rightOfDecimalPointDigitCount: Int {
         let chars = displayText
-        if let decimalPointIndex = chars.index(of: Character(".")) {
+        if let decimalPointIndex = chars.firstIndex(of: Character(".")) {
             let nextIndex = chars.index(after: decimalPointIndex)
             return chars.distance(from: nextIndex, to: chars.endIndex)
         }

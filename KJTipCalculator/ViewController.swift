@@ -150,9 +150,9 @@ class ViewController: UIViewController {
             setTextForField(splitOutput, currencyValue: calc.perPerson)
 
         default:
-            tipOutput.text = ""
-            totalOutput.text = ""
-            splitOutput.text = ""
+            tipOutput.text = " "
+            totalOutput.text = " "
+            splitOutput.text = " "
         }
     }
 
